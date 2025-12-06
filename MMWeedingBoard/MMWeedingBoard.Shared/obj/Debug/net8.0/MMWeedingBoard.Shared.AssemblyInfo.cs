@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("MMWeedingBoard")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("MMWeedingBoard.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cd9fa952ce4ab1485df7750005a7ec0193f28dfb")]
-[assembly: System.Reflection.AssemblyProductAttribute("MMWeedingBoard")]
-[assembly: System.Reflection.AssemblyTitleAttribute("MMWeedingBoard")]
+[assembly: System.Reflection.AssemblyProductAttribute("MMWeedingBoard.Shared")]
+[assembly: System.Reflection.AssemblyTitleAttribute("MMWeedingBoard.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Von der MSBuild WriteCodeFragment-Klasse generiert.
