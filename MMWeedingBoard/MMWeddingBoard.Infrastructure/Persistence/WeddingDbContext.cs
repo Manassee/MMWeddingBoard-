@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using MMWeddingBoard.Domain.Budgets;
 using MMWeddingBoard.Domain.Guests;
+using MMWeddingBoard.Domain.Notes;
 using MMWeddingBoard.Domain.Tasks;
 using MMWeddingBoard.Domain.Weddings;
 using System;
@@ -22,8 +23,15 @@ namespace MMWeddingBoard.Infrastructure.Persistence
         public DbSet<BudgetItem> BudgetsItems { get; set; }
         public DbSet<WeddingTask> Tasks { get; set; }
         public DbSet<SubTask> SubTasks { get; set; }
+        public DbSet<Note> Notes { get; set; }
+        public DbSet<NoteBlock> NoteBlocks { get; set; }
 
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(WeddingDbContext).Assembly);
+            base.OnModelCreating(modelBuilder);
+        }
 
 
 
