@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MMWeedingBoard.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cd9fa952ce4ab1485df7750005a7ec0193f28dfb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1be1c238e865d6632d1b71a530f4108270786767")]
 [assembly: System.Reflection.AssemblyProductAttribute("MMWeedingBoard.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MMWeedingBoard.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

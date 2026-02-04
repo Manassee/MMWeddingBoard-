@@ -1,0 +1,30 @@
+services:
+  postgres:
+      image: postgres:17
+      container_name: weeding-psql
+      environment:
+        POSTGRES_USER: m_my
+        POSTGRES_PASSWORD: myri1997
+        POSTGRES_DB: weedingDB
+      ports:
+         - "5432:5432" 
+      volumes:
+         - pgdata:/var/lib/postgresql/data
+      healthcheck:
+        test: ["CMD-SHELL", "pg_isready -U m_my -d weedingDB"]
+        interval: 10s
+        timeout: 5s
+        retries: 5
+
+volumes:
+  pgdata:
+  
+# Powershell Befehl zum Starten des Containers
+
+# docker starten
+#docker compose up -d
+#Überprüfung
+#docker ps
+
+
+

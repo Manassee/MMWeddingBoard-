@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/Projektmappenelemente/">
+    <File Path="docker-compose.yml" />
+  </Folder>
+  <Project Path="MMWedding.Application/MMWedding.Application.csproj" Id="eed41fa5-cd56-40b3-8805-49c7c3269612" />
+  <Project Path="MMWeddingBoard.Domain/MMWeddingBoard.Domain.csproj" Id="73d1b02c-abf4-4d18-bca0-c6f8d53a039b" />
+  <Project Path="MMWeddingBoard.Infrastructure/MMWeddingBoard.Infrastructure.csproj" Id="c138bac0-c914-4c47-8942-555bbbd07880" />
+  <Project Path="MMWeedingBoard.API/MMWeddingBoard.API.csproj" />
+  <Project Path="MMWeedingBoard.Shared/MMWeddingBoard.Shared.csproj" />
+  <Project Path="MMWeedingBoard/MMWeddingBoard.csproj" />
+</Solution>

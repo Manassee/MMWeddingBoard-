@@ -1,0 +1,28 @@
+services:
+  postgres:
+   image: postgres:17
+   container_name: mmwedding_postgres
+   restart: unless-stopped
+   environment:
+     POSTGRES_DB: mmweddingdb
+     POSTGRES_USER: mani_myri
+     POSTGRES_PASSWORD: mmwedding_pw
+
+   ports:
+    - "5432:5432"
+   volumes:
+    - mmwedding_pgdata:/var/lib/postgressql/data
+   healthcheck:
+     test: ["CMD-SHELL", "pg_isready -U mani_myri -d mmweddingdb"]
+     interval: 10s
+     timeout: 5s
+     retries: 5
+
+volumes:
+  mmwedding_pgdata:
+  
+  
+  
+
+    
+  

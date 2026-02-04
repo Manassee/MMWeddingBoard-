@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeedingBoard.Shared\\MMWeedingBoard.Shared.csproj",
-      "projectName": "MMWeedingBoard.Shared",
-      "projectPath": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeedingBoard.Shared\\MMWeedingBoard.Shared.csproj",
+      "projectUniqueName": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeedingBoard.Shared\\MMWeddingBoard.Shared.csproj",
+      "projectName": "MMWeddingBoard.Shared",
+      "projectPath": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeedingBoard.Shared\\MMWeddingBoard.Shared.csproj",
       "packagesPath": "C:\\Users\\manav\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeedingBoard.Shared\\obj\\",
       "projectStyle": "PackageReference",
@@ -72,7 +72,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
