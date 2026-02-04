@@ -1,32 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{73D1B02C-ABF4-4D18-BCA0-C6F8D53A039B}|MMWeddingBoard.Domain\\MMWeddingBoard.Domain.csproj|c:\\users\\manav\\source\\weeding\\mmweedingboard\\mmweddingboard.domain\\notes\\note.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{73D1B02C-ABF4-4D18-BCA0-C6F8D53A039B}|MMWeddingBoard.Domain\\MMWeddingBoard.Domain.csproj|solutionrelative:mmweddingboard.domain\\notes\\note.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{73D1B02C-ABF4-4D18-BCA0-C6F8D53A039B}|MMWeddingBoard.Domain\\MMWeddingBoard.Domain.csproj|c:\\users\\manav\\source\\weeding\\mmweedingboard\\mmweddingboard.domain\\common\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{73D1B02C-ABF4-4D18-BCA0-C6F8D53A039B}|MMWeddingBoard.Domain\\MMWeddingBoard.Domain.csproj|solutionrelative:mmweddingboard.domain\\common\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{73D1B02C-ABF4-4D18-BCA0-C6F8D53A039B}|MMWeddingBoard.Domain\\MMWeddingBoard.Domain.csproj|c:\\users\\manav\\source\\weeding\\mmweedingboard\\mmweddingboard.domain\\mmweddingboard.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{73D1B02C-ABF4-4D18-BCA0-C6F8D53A039B}|MMWeddingBoard.Domain\\MMWeddingBoard.Domain.csproj|solutionrelative:mmweddingboard.domain\\mmweddingboard.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C138BAC0-C914-4C47-8942-555BBBD07880}|MMWeddingBoard.Infrastructure\\MMWeddingBoard.Infrastructure.csproj|c:\\users\\manav\\source\\weeding\\mmweedingboard\\mmweddingboard.infrastructure\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C138BAC0-C914-4C47-8942-555BBBD07880}|MMWeddingBoard.Infrastructure\\MMWeddingBoard.Infrastructure.csproj|solutionrelative:mmweddingboard.infrastructure\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EED41FA5-CD56-40B3-8805-49C7C3269612}|MMWedding.Application\\MMWedding.Application.csproj|c:\\users\\manav\\source\\weeding\\mmweedingboard\\mmwedding.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EED41FA5-CD56-40B3-8805-49C7C3269612}|MMWedding.Application\\MMWedding.Application.csproj|solutionrelative:mmwedding.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6A31DC8-73CB-4065-ABBF-AEEF564C8213}|Projektmappenelemente{D6A31DC8-73CB-4065-ABBF-AEEF564C8213}|C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\docker-compose.yml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}",
-      "RelativeMoniker": "D:0:0:{D6A31DC8-73CB-4065-ABBF-AEEF564C8213}|Projektmappenelemente{D6A31DC8-73CB-4065-ABBF-AEEF564C8213}|solutionrelative:docker-compose.yml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -34,47 +9,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Note.cs",
-              "DocumentMoniker": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard.Domain\\Notes\\Note.cs",
-              "RelativeDocumentMoniker": "MMWeddingBoard.Domain\\Notes\\Note.cs",
-              "ToolTip": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard.Domain\\Notes\\Note.cs",
-              "RelativeToolTip": "MMWeddingBoard.Domain\\Notes\\Note.cs",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAuwH0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T09:10:55.076Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Entity.cs",
-              "DocumentMoniker": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard.Domain\\Common\\Entity.cs",
-              "RelativeDocumentMoniker": "MMWeddingBoard.Domain\\Common\\Entity.cs",
-              "ToolTip": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard.Domain\\Common\\Entity.cs",
-              "RelativeToolTip": "MMWeddingBoard.Domain\\Common\\Entity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T08:02:21.392Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MMWeddingBoard.Domain",
-              "DocumentMoniker": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard.Domain\\MMWeddingBoard.Domain.csproj",
-              "RelativeDocumentMoniker": "MMWeddingBoard.Domain\\MMWeddingBoard.Domain.csproj",
-              "ToolTip": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard.Domain\\MMWeddingBoard.Domain.csproj",
-              "RelativeToolTip": "MMWeddingBoard.Domain\\MMWeddingBoard.Domain.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-02-04T08:01:25.526Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -190,45 +126,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard.Infrastructure\\Class1.cs",
-              "RelativeDocumentMoniker": "MMWeddingBoard.Infrastructure\\Class1.cs",
-              "ToolTip": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard.Infrastructure\\Class1.cs",
-              "RelativeToolTip": "MMWeddingBoard.Infrastructure\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T07:53:19.89Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWedding.Application\\Class1.cs",
-              "RelativeDocumentMoniker": "MMWedding.Application\\Class1.cs",
-              "ToolTip": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWedding.Application\\Class1.cs",
-              "RelativeToolTip": "MMWedding.Application\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T07:51:17.388Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "docker-compose.yml",
-              "DocumentMoniker": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\docker-compose.yml",
-              "RelativeDocumentMoniker": "docker-compose.yml",
-              "ToolTip": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\docker-compose.yml",
-              "RelativeToolTip": "docker-compose.yml",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAABoAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2026-02-04T05:37:29.91Z",
-              "EditorCaption": ""
             }
           ]
         },

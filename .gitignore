@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 # Diese .gitignore-Datei wurde von Microsoft(R) Visual Studio automatisch erstellt.
 ################################################################################
 
@@ -10,3 +10,4 @@
 /MMWeedingBoard/.vs/MMWeddingBoard.slnx/FileContentIndex/5f809d56-2b33-46d7-a36b-37e6b0d699a1.vsidx
 =======
 >>>>>>> 60b6b0c5510f8cfd97c1488e7ba01ab027f6f77e
+*.vsidx

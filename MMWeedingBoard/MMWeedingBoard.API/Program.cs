@@ -7,7 +7,18 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var app = builder.Build();
+var cs = builder.Configuration.GetConnectionString("DefaultConnection");
+if(cs is null)
+{
+    throw new InvalidOperationException("Datenbankverbindung fail, Bitte prüfe den Connectionstring...\n");
+}
+else
+{
+    Console.WriteLine("ConnectionString wurde geladen.\nDatenbankverbindung erfolgreich hergestellt...\n ");
+}
+
+
+    var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

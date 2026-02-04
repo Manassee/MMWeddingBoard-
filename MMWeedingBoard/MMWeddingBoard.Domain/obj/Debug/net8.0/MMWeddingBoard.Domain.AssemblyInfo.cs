@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MMWeddingBoard.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4b91c9648b5d747f503c19fc0a2a85eadad700b1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+60b6b0c5510f8cfd97c1488e7ba01ab027f6f77e")]
 [assembly: System.Reflection.AssemblyProductAttribute("MMWeddingBoard.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MMWeddingBoard.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

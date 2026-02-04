@@ -1,0 +1,12 @@
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWedding.Application\bin\Debug\net8.0\MMWedding.Application.deps.json
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWedding.Application\bin\Debug\net8.0\MMWedding.Application.dll
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWedding.Application\bin\Debug\net8.0\MMWedding.Application.pdb
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWedding.Application\obj\Debug\net8.0\MMWedding.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWedding.Application\obj\Debug\net8.0\MMWedding.Application.AssemblyInfoInputs.cache
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWedding.Application\obj\Debug\net8.0\MMWedding.Application.AssemblyInfo.cs
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWedding.Application\obj\Debug\net8.0\MMWedding.Application.csproj.CoreCompileInputs.cache
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWedding.Application\obj\Debug\net8.0\MMWedding.Application.sourcelink.json
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWedding.Application\obj\Debug\net8.0\MMWedding.Application.dll
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWedding.Application\obj\Debug\net8.0\refint\MMWedding.Application.dll
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWedding.Application\obj\Debug\net8.0\MMWedding.Application.pdb
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWedding.Application\obj\Debug\net8.0\ref\MMWedding.Application.dll

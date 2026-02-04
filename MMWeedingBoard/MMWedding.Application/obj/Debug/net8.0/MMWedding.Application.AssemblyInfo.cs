@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MMWedding.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1be1c238e865d6632d1b71a530f4108270786767")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+60b6b0c5510f8cfd97c1488e7ba01ab027f6f77e")]
 [assembly: System.Reflection.AssemblyProductAttribute("MMWedding.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MMWedding.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
