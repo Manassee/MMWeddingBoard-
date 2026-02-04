@@ -15,10 +15,12 @@ if(cs is null)
 else
 {
     Console.WriteLine("ConnectionString wurde geladen.\nDatenbankverbindung erfolgreich hergestellt...\n ");
+
 }
 
 
-    var app = builder.Build();
+
+var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

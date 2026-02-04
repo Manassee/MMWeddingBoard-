@@ -3,28 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C138BAC0-C914-4C47-8942-555BBBD07880}|MMWeddingBoard.Infrastructure\\MMWeddingBoard.Infrastructure.csproj|c:\\users\\manav\\source\\weeding\\mmweedingboard\\mmweddingboard.infrastructure\\repositories\\noterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C138BAC0-C914-4C47-8942-555BBBD07880}|MMWeddingBoard.Infrastructure\\MMWeddingBoard.Infrastructure.csproj|solutionrelative:mmweddingboard.infrastructure\\repositories\\noterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C138BAC0-C914-4C47-8942-555BBBD07880}|MMWeddingBoard.Infrastructure\\MMWeddingBoard.Infrastructure.csproj|c:\\users\\manav\\source\\weeding\\mmweedingboard\\mmweddingboard.infrastructure\\repositories\\budgetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C138BAC0-C914-4C47-8942-555BBBD07880}|MMWeddingBoard.Infrastructure\\MMWeddingBoard.Infrastructure.csproj|solutionrelative:mmweddingboard.infrastructure\\repositories\\budgetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C138BAC0-C914-4C47-8942-555BBBD07880}|MMWeddingBoard.Infrastructure\\MMWeddingBoard.Infrastructure.csproj|c:\\users\\manav\\source\\weeding\\mmweedingboard\\mmweddingboard.infrastructure\\repositories\\guestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C138BAC0-C914-4C47-8942-555BBBD07880}|MMWeddingBoard.Infrastructure\\MMWeddingBoard.Infrastructure.csproj|solutionrelative:mmweddingboard.infrastructure\\repositories\\guestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C138BAC0-C914-4C47-8942-555BBBD07880}|MMWeddingBoard.Infrastructure\\MMWeddingBoard.Infrastructure.csproj|c:\\users\\manav\\source\\weeding\\mmweedingboard\\mmweddingboard.infrastructure\\repositories\\taskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C138BAC0-C914-4C47-8942-555BBBD07880}|MMWeddingBoard.Infrastructure\\MMWeddingBoard.Infrastructure.csproj|solutionrelative:mmweddingboard.infrastructure\\repositories\\taskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C138BAC0-C914-4C47-8942-555BBBD07880}|MMWeddingBoard.Infrastructure\\MMWeddingBoard.Infrastructure.csproj|c:\\users\\manav\\source\\weeding\\mmweedingboard\\mmweddingboard.infrastructure\\mmweddingboard.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{C138BAC0-C914-4C47-8942-555BBBD07880}|MMWeddingBoard.Infrastructure\\MMWeddingBoard.Infrastructure.csproj|solutionrelative:mmweddingboard.infrastructure\\mmweddingboard.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C138BAC0-C914-4C47-8942-555BBBD07880}|MMWeddingBoard.Infrastructure\\MMWeddingBoard.Infrastructure.csproj|c:\\users\\manav\\source\\weeding\\mmweedingboard\\mmweddingboard.infrastructure\\persistence\\weddingdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C138BAC0-C914-4C47-8942-555BBBD07880}|MMWeddingBoard.Infrastructure\\MMWeddingBoard.Infrastructure.csproj|solutionrelative:mmweddingboard.infrastructure\\persistence\\weddingdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{423334E3-B389-0B20-0E5D-015F631799B4}|MMWeedingBoard.API\\MMWeddingBoard.API.csproj|c:\\users\\manav\\source\\weeding\\mmweedingboard\\mmweedingboard.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{423334E3-B389-0B20-0E5D-015F631799B4}|MMWeedingBoard.API\\MMWeddingBoard.API.csproj|solutionrelative:mmweedingboard.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C138BAC0-C914-4C47-8942-555BBBD07880}|MMWeddingBoard.Infrastructure\\MMWeddingBoard.Infrastructure.csproj|c:\\users\\manav\\source\\weeding\\mmweedingboard\\mmweddingboard.infrastructure\\persistence\\weddingdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,73 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 29,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "NoteRepository.cs",
-              "DocumentMoniker": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard.Infrastructure\\Repositories\\NoteRepository.cs",
-              "RelativeDocumentMoniker": "MMWeddingBoard.Infrastructure\\Repositories\\NoteRepository.cs",
-              "ToolTip": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard.Infrastructure\\Repositories\\NoteRepository.cs",
-              "RelativeToolTip": "MMWeddingBoard.Infrastructure\\Repositories\\NoteRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T13:01:05.076Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BudgetRepository.cs",
-              "DocumentMoniker": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard.Infrastructure\\Repositories\\BudgetRepository.cs",
-              "RelativeDocumentMoniker": "MMWeddingBoard.Infrastructure\\Repositories\\BudgetRepository.cs",
-              "ToolTip": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard.Infrastructure\\Repositories\\BudgetRepository.cs",
-              "RelativeToolTip": "MMWeddingBoard.Infrastructure\\Repositories\\BudgetRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T13:00:19.293Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GuestRepository.cs",
-              "DocumentMoniker": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard.Infrastructure\\Repositories\\GuestRepository.cs",
-              "RelativeDocumentMoniker": "MMWeddingBoard.Infrastructure\\Repositories\\GuestRepository.cs",
-              "ToolTip": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard.Infrastructure\\Repositories\\GuestRepository.cs",
-              "RelativeToolTip": "MMWeddingBoard.Infrastructure\\Repositories\\GuestRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T12:59:02.669Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TaskRepository.cs",
-              "DocumentMoniker": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard.Infrastructure\\Repositories\\TaskRepository.cs",
-              "RelativeDocumentMoniker": "MMWeddingBoard.Infrastructure\\Repositories\\TaskRepository.cs",
-              "ToolTip": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard.Infrastructure\\Repositories\\TaskRepository.cs",
-              "RelativeToolTip": "MMWeddingBoard.Infrastructure\\Repositories\\TaskRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T12:58:45.216Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MMWeddingBoard.Infrastructure",
-              "DocumentMoniker": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard.Infrastructure\\MMWeddingBoard.Infrastructure.csproj",
-              "RelativeDocumentMoniker": "MMWeddingBoard.Infrastructure\\MMWeddingBoard.Infrastructure.csproj",
-              "ToolTip": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard.Infrastructure\\MMWeddingBoard.Infrastructure.csproj",
-              "RelativeToolTip": "MMWeddingBoard.Infrastructure\\MMWeddingBoard.Infrastructure.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-02-04T12:47:23.242Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -223,28 +138,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "WeddingDbContextFactory.cs",
-              "DocumentMoniker": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard.Infrastructure\\Persistence\\WeddingDbContextFactory.cs",
-              "RelativeDocumentMoniker": "MMWeddingBoard.Infrastructure\\Persistence\\WeddingDbContextFactory.cs",
-              "ToolTip": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard.Infrastructure\\Persistence\\WeddingDbContextFactory.cs",
-              "RelativeToolTip": "MMWeddingBoard.Infrastructure\\Persistence\\WeddingDbContextFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeedingBoard.API\\Program.cs",
+              "RelativeDocumentMoniker": "MMWeedingBoard.API\\Program.cs",
+              "ToolTip": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeedingBoard.API\\Program.cs",
+              "RelativeToolTip": "MMWeedingBoard.API\\Program.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T12:41:43.949Z",
+              "WhenOpened": "2026-02-04T13:57:14.715Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "WeddingDbContext.cs",
               "DocumentMoniker": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard.Infrastructure\\Persistence\\WeddingDbContext.cs",
               "RelativeDocumentMoniker": "MMWeddingBoard.Infrastructure\\Persistence\\WeddingDbContext.cs",
               "ToolTip": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard.Infrastructure\\Persistence\\WeddingDbContext.cs",
               "RelativeToolTip": "MMWeddingBoard.Infrastructure\\Persistence\\WeddingDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T12:41:07.563Z",
+              "WhenOpened": "2026-02-04T13:26:40.576Z",
               "EditorCaption": ""
             }
           ]

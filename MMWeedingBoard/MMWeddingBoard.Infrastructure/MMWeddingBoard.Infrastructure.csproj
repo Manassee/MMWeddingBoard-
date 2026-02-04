@@ -20,4 +20,8 @@
     <Folder Include="Persistence\Configurations\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MMWeddingBoard.Domain\MMWeddingBoard.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

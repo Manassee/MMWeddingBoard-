@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace MMWeddingBoard.Domain.Tasks
 {
-    public class Task:Entity
+    public class WeddingTask:Entity
     {
-        protected Task() { }
+        protected WeddingTask() { }
 
-        public Task(Guid weddingId, string title, string? description = null, DateOnly? dueDate = null)
+        public WeddingTask(Guid weddingId, string title, string? description = null, DateOnly? dueDate = null)
         {
             if (weddingId == Guid.Empty)
                 throw new ArgumentException("WeddingId ist nötig.", nameof(weddingId));

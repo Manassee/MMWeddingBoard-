@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{73D1B02C-ABF4-4D18-BCA0-C6F8D53A039B}|MMWeddingBoard.Domain\\MMWeddingBoard.Domain.csproj|c:\\users\\manav\\source\\weeding\\mmweedingboard\\mmweddingboard.domain\\tasks\\weddingtask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73D1B02C-ABF4-4D18-BCA0-C6F8D53A039B}|MMWeddingBoard.Domain\\MMWeddingBoard.Domain.csproj|solutionrelative:mmweddingboard.domain\\tasks\\weddingtask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C138BAC0-C914-4C47-8942-555BBBD07880}|MMWeddingBoard.Infrastructure\\MMWeddingBoard.Infrastructure.csproj|c:\\users\\manav\\source\\weeding\\mmweedingboard\\mmweddingboard.infrastructure\\persistence\\weddingdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C138BAC0-C914-4C47-8942-555BBBD07880}|MMWeddingBoard.Infrastructure\\MMWeddingBoard.Infrastructure.csproj|solutionrelative:mmweddingboard.infrastructure\\persistence\\weddingdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{423334E3-B389-0B20-0E5D-015F631799B4}|MMWeedingBoard.API\\MMWeddingBoard.API.csproj|c:\\users\\manav\\source\\weeding\\mmweedingboard\\mmweedingboard.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{423334E3-B389-0B20-0E5D-015F631799B4}|MMWeedingBoard.API\\MMWeddingBoard.API.csproj|solutionrelative:mmweedingboard.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +22,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WeddingTask.cs",
+              "DocumentMoniker": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard.Domain\\Tasks\\WeddingTask.cs",
+              "RelativeDocumentMoniker": "MMWeddingBoard.Domain\\Tasks\\WeddingTask.cs",
+              "ToolTip": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard.Domain\\Tasks\\WeddingTask.cs",
+              "RelativeToolTip": "MMWeddingBoard.Domain\\Tasks\\WeddingTask.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T14:14:31.512Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -126,6 +152,32 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeedingBoard.API\\Program.cs",
+              "RelativeDocumentMoniker": "MMWeedingBoard.API\\Program.cs",
+              "ToolTip": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeedingBoard.API\\Program.cs",
+              "RelativeToolTip": "MMWeedingBoard.API\\Program.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T13:57:14.715Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WeddingDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard.Infrastructure\\Persistence\\WeddingDbContext.cs",
+              "RelativeDocumentMoniker": "MMWeddingBoard.Infrastructure\\Persistence\\WeddingDbContext.cs",
+              "ToolTip": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard.Infrastructure\\Persistence\\WeddingDbContext.cs",
+              "RelativeToolTip": "MMWeddingBoard.Infrastructure\\Persistence\\WeddingDbContext.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T13:26:40.576Z",
+              "EditorCaption": ""
             }
           ]
         },
