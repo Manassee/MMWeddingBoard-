@@ -1,3 +1,5 @@
+using MMWeddingBoard.Infrastructure.DependencyInjection;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,15 +9,17 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var cs = builder.Configuration.GetConnectionString("DefaultConnection");
-if(cs is null)
+try
 {
-    throw new InvalidOperationException("Datenbankverbindung fail, Bitte prüfe den Connectionstring...\n");
-}
-else
-{
-    Console.WriteLine("ConnectionString wurde geladen.\nDatenbankverbindung erfolgreich hergestellt...\n ");
+    Console.WriteLine("\t\tPRÜFUNG: Alle Komponente der Infrastruktur werden hinzugefügt...\n\n");
 
+    builder.Services.AddInfrastructure();
+    Console.WriteLine("\t\tERFOLG: Alle Komponenten der Infrastruktur wurden erfolgreich hinzugefügt.\n\n");
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"Fehler beim Hinzufügen der Infrastruktur: {ex.Message}");
+    throw; 
 }
 
 

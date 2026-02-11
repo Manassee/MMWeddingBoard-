@@ -15,7 +15,6 @@ public sealed class BudgetConfiguration : IEntityTypeConfiguration<Budget>
         b.Property(x => x.Id).HasColumnName("budget_id");
 
         b.Property(x => x.WeddingId).HasColumnName("wedding_id").IsRequired();
-
         b.Property(x => x.Category).HasColumnName("category").IsRequired().HasMaxLength(150);
         b.Property(x => x.PlannedAmount).HasColumnName("planned_amount").HasColumnType("numeric(12,2)").IsRequired();
 
@@ -25,6 +24,16 @@ public sealed class BudgetConfiguration : IEntityTypeConfiguration<Budget>
         b.HasOne<Wedding>()
             .WithMany()
             .HasForeignKey(x => x.WeddingId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        // ✅ Items als Navigation nutzen (und nur hier Field Access konfigurieren)
+        b.Navigation(x => x.Items)
+            .UsePropertyAccessMode(PropertyAccessMode.Field);
+
+        // ✅ Beziehung über Items definieren (NICHT "_items" nochmal nennen!)
+        b.HasMany(x => x.Items)
+            .WithOne()
+            .HasForeignKey(x => x.BudgetId)
             .OnDelete(DeleteBehavior.Cascade);
 
         b.HasIndex(x => x.WeddingId);

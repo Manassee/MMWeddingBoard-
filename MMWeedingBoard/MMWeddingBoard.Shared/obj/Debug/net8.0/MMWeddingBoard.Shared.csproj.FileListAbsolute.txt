@@ -1,0 +1,12 @@
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWeddingBoard.Shared\bin\Debug\net8.0\MMWeddingBoard.Shared.deps.json
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWeddingBoard.Shared\bin\Debug\net8.0\MMWeddingBoard.Shared.dll
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWeddingBoard.Shared\bin\Debug\net8.0\MMWeddingBoard.Shared.pdb
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWeddingBoard.Shared\obj\Debug\net8.0\MMWeddingBoard.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWeddingBoard.Shared\obj\Debug\net8.0\MMWeddingBoard.Shared.AssemblyInfoInputs.cache
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWeddingBoard.Shared\obj\Debug\net8.0\MMWeddingBoard.Shared.AssemblyInfo.cs
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWeddingBoard.Shared\obj\Debug\net8.0\MMWeddingBoard.Shared.csproj.CoreCompileInputs.cache
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWeddingBoard.Shared\obj\Debug\net8.0\MMWeddingBoard.Shared.sourcelink.json
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWeddingBoard.Shared\obj\Debug\net8.0\MMWeddingBoard.Shared.dll
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWeddingBoard.Shared\obj\Debug\net8.0\refint\MMWeddingBoard.Shared.dll
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWeddingBoard.Shared\obj\Debug\net8.0\MMWeddingBoard.Shared.pdb
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWeddingBoard.Shared\obj\Debug\net8.0\ref\MMWeddingBoard.Shared.dll
