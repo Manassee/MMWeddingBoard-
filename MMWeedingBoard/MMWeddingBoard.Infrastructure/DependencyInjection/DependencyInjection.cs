@@ -1,23 +1,23 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using MMWeddingBoard.Infrastructure.Persistence;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace MMWeddingBoard.Infrastructure.DependencyInjection
+namespace MMWeddingBoard.Infrastructure.DependencyInjection;
+
+public static class DependencyInjection
 {
-    public static class DependencyInjection
+    public static IServiceCollection AddInfrastructure(
+        this IServiceCollection services,
+        IConfiguration configuration)
     {
-        public static IServiceCollection AddInfrastructure(this IServiceCollection services)
-        {
-            //Beispiel: services.AddScoped<IProjectRepository, ProjectRepository>();
+        var connectionString = configuration.GetConnectionString("DefaultConnection");
 
-            // Registriere den DbContextFactory, damit er in der gesamten Anwendung verwendet werden kann
-            services.AddScoped<WeddingDbContextFactory>();
+        services.AddDbContext<WeddingDbContext>(options =>
+            options.UseNpgsql(connectionString));
+        Console.WriteLine(connectionString);
+        
 
-            return services;
-        }
+        return services;
     }
 }

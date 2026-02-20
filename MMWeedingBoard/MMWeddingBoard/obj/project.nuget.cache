@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "a7z1x3+eSNA=",
+  "dgSpecHash": "CSed2mC8KAY=",
   "success": true,
   "projectFilePath": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard\\MMWeddingBoard.csproj",
   "expectedPackageFiles": [
@@ -28,10 +28,10 @@
     "C:\\Users\\manav\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "C:\\Users\\manav\\.nuget\\packages\\microsoft.jsinterop\\8.0.22\\microsoft.jsinterop.8.0.22.nupkg.sha512",
     "C:\\Users\\manav\\.nuget\\packages\\microsoft.jsinterop.webassembly\\8.0.22\\microsoft.jsinterop.webassembly.8.0.22.nupkg.sha512",
-    "C:\\Users\\manav\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.22\\microsoft.net.illink.tasks.8.0.22.nupkg.sha512",
-    "C:\\Users\\manav\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\10.0.1\\microsoft.net.sdk.webassembly.pack.10.0.1.nupkg.sha512",
+    "C:\\Users\\manav\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.24\\microsoft.net.illink.tasks.8.0.24.nupkg.sha512",
+    "C:\\Users\\manav\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\10.0.3\\microsoft.net.sdk.webassembly.pack.10.0.3.nupkg.sha512",
     "C:\\Users\\manav\\.nuget\\packages\\system.io.pipelines\\8.0.0\\system.io.pipelines.8.0.0.nupkg.sha512",
-    "C:\\Users\\manav\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.22\\microsoft.netcore.app.runtime.mono.browser-wasm.8.0.22.nupkg.sha512"
+    "C:\\Users\\manav\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.24\\microsoft.netcore.app.runtime.mono.browser-wasm.8.0.24.nupkg.sha512"
   ],
   "logs": []
 }

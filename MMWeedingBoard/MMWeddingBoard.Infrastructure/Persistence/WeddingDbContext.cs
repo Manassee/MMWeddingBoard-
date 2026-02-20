@@ -29,9 +29,15 @@ namespace MMWeddingBoard.Infrastructure.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(WeddingDbContext).Assembly);
+
+            modelBuilder.Entity<Budget>().Ignore("Title");
+            modelBuilder.Entity<Guest>().Ignore("Title");
+
             base.OnModelCreating(modelBuilder);
-        }
+        
+    }
 
 
 

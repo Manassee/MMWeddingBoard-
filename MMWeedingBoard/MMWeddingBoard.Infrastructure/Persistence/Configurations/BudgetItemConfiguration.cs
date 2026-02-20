@@ -24,6 +24,7 @@ public sealed class BudgetItemConfiguration : IEntityTypeConfiguration<BudgetIte
             .IsRequired()
             .HasMaxLength(200);
 
+
         b.Property(x => x.Amount)
             .HasColumnName("amount")
             .HasColumnType("numeric(12,2)")

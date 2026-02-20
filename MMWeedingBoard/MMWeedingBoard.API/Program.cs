@@ -1,4 +1,8 @@
+using Microsoft.EntityFrameworkCore;
+using MMWeddingBoard.Infrastructure.Data;
 using MMWeddingBoard.Infrastructure.DependencyInjection;
+using MMWeddingBoard.Infrastructure.Persistence;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +17,7 @@ try
 {
     Console.WriteLine("\t\tPRÜFUNG: Alle Komponente der Infrastruktur werden hinzugefügt...\n\n");
 
-    builder.Services.AddInfrastructure();
+    builder.Services.AddInfrastructure(builder.Configuration);
     Console.WriteLine("\t\tERFOLG: Alle Komponenten der Infrastruktur wurden erfolgreich hinzugefügt.\n\n");
 }
 catch (Exception ex)
@@ -31,6 +35,15 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+}
+
+if (app.Environment.IsDevelopment())
+{
+    using var scope = app.Services.CreateScope();
+    var db = scope.ServiceProvider.GetRequiredService<WeddingDbContext>();
+    await db.Database.MigrateAsync();
+    await MMWeddingBoard.Infrastructure.Data.DataSeeder.SeedAsync(db);
+
 }
 
 app.UseHttpsRedirection();

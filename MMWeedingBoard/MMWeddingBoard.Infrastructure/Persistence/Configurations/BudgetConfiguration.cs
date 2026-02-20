@@ -15,7 +15,11 @@ public sealed class BudgetConfiguration : IEntityTypeConfiguration<Budget>
         b.Property(x => x.Id).HasColumnName("budget_id");
 
         b.Property(x => x.WeddingId).HasColumnName("wedding_id").IsRequired();
-        b.Property(x => x.Category).HasColumnName("category").IsRequired().HasMaxLength(150);
+        b.Property(x => x.Category)
+            .HasColumnName("category")   // ✅ exakt so (Groß/Klein ist bei Postgres relevant je nach Quotes)
+            .IsRequired()
+            .HasMaxLength(200);
+
         b.Property(x => x.PlannedAmount).HasColumnName("planned_amount").HasColumnType("numeric(12,2)").IsRequired();
 
         b.Property(x => x.CreatedAt).HasColumnName("created_at").IsRequired();
