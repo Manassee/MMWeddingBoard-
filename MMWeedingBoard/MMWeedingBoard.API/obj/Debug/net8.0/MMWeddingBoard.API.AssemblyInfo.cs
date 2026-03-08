@@ -11,11 +11,10 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("a37d3d6c-3eaa-4095-aa30-c45aaafdddb2")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("MMWeddingBoard.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e0910add5ce017868b1c1a5dc970a2ab6683156")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3cfba1607cbb3cabe5c93669e374b7498ea8528f")]
 [assembly: System.Reflection.AssemblyProductAttribute("MMWeddingBoard.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MMWeddingBoard.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

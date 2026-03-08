@@ -1,0 +1,12 @@
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWeddingBoard.Domain\bin\Debug\net8.0\MMWeddingBoard.Domain.deps.json
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWeddingBoard.Domain\bin\Debug\net8.0\MMWeddingBoard.Domain.dll
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWeddingBoard.Domain\bin\Debug\net8.0\MMWeddingBoard.Domain.pdb
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWeddingBoard.Domain\obj\Debug\net8.0\MMWeddingBoard.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWeddingBoard.Domain\obj\Debug\net8.0\MMWeddingBoard.Domain.AssemblyInfoInputs.cache
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWeddingBoard.Domain\obj\Debug\net8.0\MMWeddingBoard.Domain.AssemblyInfo.cs
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWeddingBoard.Domain\obj\Debug\net8.0\MMWeddingBoard.Domain.csproj.CoreCompileInputs.cache
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWeddingBoard.Domain\obj\Debug\net8.0\MMWeddingBoard.Domain.sourcelink.json
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWeddingBoard.Domain\obj\Debug\net8.0\MMWeddingBoard.Domain.dll
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWeddingBoard.Domain\obj\Debug\net8.0\refint\MMWeddingBoard.Domain.dll
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWeddingBoard.Domain\obj\Debug\net8.0\MMWeddingBoard.Domain.pdb
+C:\Users\manav\source\Weeding\MMWeedingBoard\MMWeddingBoard.Domain\obj\Debug\net8.0\ref\MMWeddingBoard.Domain.dll

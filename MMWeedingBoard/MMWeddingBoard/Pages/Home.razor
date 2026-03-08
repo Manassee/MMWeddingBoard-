@@ -1,7 +1,46 @@
 ﻿@page "/"
+@inject HttpClient Http
+@using MMWeddingBoard.Shared.Dtos
 
-<PageTitle>Home</PageTitle>
+<h1>Meine Hochzeiten</h1>
 
-<h1>Hello, world!</h1>
+@if (fehler != null)
+{
+    <p style="color:red">@fehler</p>
+}
+else if (daten == null)
+{
+    <p>⏳ Lade...</p>
+}
+else if (!daten.Any())
+{
+    <p>Keine Hochzeiten gefunden.</p>
+}
+else
+{
+    @foreach (var w in daten)
+    {
+        <div>
+            <h3>@w.Title</h3>
+            <p>📅 @w.EventDate</p>
+            <p>📍 @w.Location</p>
+        </div>
+    }
+}
 
-Welcome to your new app.
+@code {
+    private IReadOnlyList<WeddingDto>? daten;
+    private string? fehler;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            daten = await Http.GetFromJsonAsync<IReadOnlyList<WeddingDto>>("api/weddings");
+        }
+        catch (Exception ex)
+        {
+            fehler = $"API nicht erreichbar: {ex.Message}";
+        }
+    }
+}
