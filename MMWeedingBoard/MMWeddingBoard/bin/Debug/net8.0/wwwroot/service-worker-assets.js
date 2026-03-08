@@ -1,12 +1,28 @@
 self.assetsManifest = {
-  "version": "vjvJO+2u",
+  "version": "ODojS8vI",
   "assets": [
     {
-      "hash": "sha256-cR/ivqq5nRVrj1w6UwQZpvBuD+s/m/9U+mh/xl4ZGy4=",
+      "hash": "sha256-H9dLxjEnhHrvRo0OWCqO+f1JRxTO35YHrn84wI9T+b8=",
+      "url": "196.png"
+    },
+    {
+      "hash": "sha256-NDTtsPU7jQunCjnxOTEbUK5TmTXvQAoxHb5N0iDQV9E=",
+      "url": "512.png"
+    },
+    {
+      "hash": "sha256-z1J2tIxTwZaFDtmbUtNfHV3+vSiZnJ4npwH/sINjn4A=",
+      "url": "_framework/MMWeddingBoard.Shared.pdb"
+    },
+    {
+      "hash": "sha256-w08dpeiYsbGIwpYeTJUhYSFYpBxITa6FQlmgzzUDgFI=",
+      "url": "_framework/MMWeddingBoard.Shared.wasm"
+    },
+    {
+      "hash": "sha256-sgBF2l4lwrI3vBOaywymdjgpCqSj+4uALJAV4XN1QHg=",
       "url": "_framework/MMWeddingBoard.pdb"
     },
     {
-      "hash": "sha256-TtEcyszR4DOKdCMiXcPIA7opPyNHFCF4WwyFpEm1pBQ=",
+      "hash": "sha256-WkaL7TF1BY6mJOoTcab90HdpfQT8W6A1CukvwJgDsek=",
       "url": "_framework/MMWeddingBoard.wasm"
     },
     {
@@ -766,7 +782,7 @@ self.assetsManifest = {
       "url": "_framework/WindowsBase.wasm"
     },
     {
-      "hash": "sha256-wYT1VAe9h1Cx0at2JCkNdVe8o6gRshTi/5GW5udUPSA=",
+      "hash": "sha256-God7vIv6XbdmxX/Wlyhwg+fbUBnUCmaoKoRB2bVY/jE=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -826,19 +842,11 @@ self.assetsManifest = {
       "url": "css/app.css"
     },
     {
-      "hash": "sha256-DbpQaq68ZSb5IoPosBErM1QWBfsbTxpJqhU0REi6wP4=",
-      "url": "icon-192.png"
-    },
-    {
-      "hash": "sha256-oEo6d+KqX5fjxTiZk/w9NB3Mi0+ycS5yLwCKwr4IkbA=",
-      "url": "icon-512.png"
-    },
-    {
       "hash": "sha256-OQNsNvt+EGYdpDUCCRqzXSTNbbTXkIhnGEri/C9/qOg=",
       "url": "index.html"
     },
     {
-      "hash": "sha256-v683CnyqKTo+6jTiS1y7GV7M51jJh+ujfuK/rC+pEbM=",
+      "hash": "sha256-eY36hQx2iGxo3j7WOqaagdvO1EaQlsxOdn5r5CUjk/w=",
       "url": "manifest.webmanifest"
     }
   ]

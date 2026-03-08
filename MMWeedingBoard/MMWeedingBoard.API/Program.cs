@@ -1,5 +1,6 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using MMWeddingBoard.Infrastructure.Data;
+using MMWedding.Application.DependencyInjection;    
 using MMWeddingBoard.Infrastructure.DependencyInjection;
 using MMWeddingBoard.Infrastructure.Persistence;
 using System;
@@ -15,17 +16,43 @@ builder.Services.AddSwaggerGen();
 
 try
 {
-    Console.WriteLine("\t\tPR�FUNG: Alle Komponente der Infrastruktur werden hinzugef�gt...\n\n");
+    Console.WriteLine("\t\tPRÜFUNG: Alle Komponente der Applicationschicht werden hinzugefügt...\n\n");
+    builder.Services.AddApplication(builder.Configuration);
+
+    Console.WriteLine("\t\tPRÜFUNG: Alle Komponente der Infrastruktur werden hinzugefügt...\n\n");
 
     builder.Services.AddInfrastructure(builder.Configuration);
-    Console.WriteLine("\t\tERFOLG: Alle Komponenten der Infrastruktur wurden erfolgreich hinzugef�gt.\n\n");
+    Console.WriteLine("\t\tERFOLG: Alle Komponenten der Infrastruktur wurden erfolgreich hinzugefügt.\n\n");
 }
 catch (Exception ex)
 {
-    Console.WriteLine($"Fehler beim Hinzuf�gen der Infrastruktur: {ex.Message}");
-    throw; 
+    if(builder.Services.AddInfrastructure(builder.Configuration) == null)
+    {
+        Console.WriteLine("\t\tFEHLER: Es gab ein Problem beim Hinzufügen der Infrastrukturkomponenten. Bitte überprüfen Sie die Konfiguration und die Implementierung der Infrastruktur.\n\n");
+    }
+
+    if(builder.Services.AddApplication(builder.Configuration) == null)
+    {
+        Console.WriteLine("\t\tFEHLER: Es gab ein Problem beim Hinzufügen der Anwendungsdienste. Bitte überprüfen Sie die Implementierung der Anwendungsdienste und deren Abhängigkeiten.\n\n");
+    }
+     Console.WriteLine($"\t\tFEHLER: {ex.Message}\n\n");
+
 }
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("BlazorClient", policy =>
+    {
+        policy.WithOrigins(
+            "https://localhost:7165",
+            "http://localhost:5097",
+            "https://192.168.1.158:7165",
+            "http://192.168.1.158:5097"  // ← Handy-Zugriff
+        )
+        .AllowAnyMethod()
+        .AllowAnyHeader();
+    });
+});
 
 
 var app = builder.Build();
@@ -50,6 +77,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+app.UseCors("BlazorClient");
 app.MapControllers();
 
 app.Run();

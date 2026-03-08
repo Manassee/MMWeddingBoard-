@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "WeddungApp",
+    "Projects": [
+      {
+        "Path": "MMWeddingBoard\\MMWeddingBoard.csproj",
+        "Action": "Start",
+        "DebugTarget": "http"
+      },
+      {
+        "Path": "MMWeedingBoard.API\\MMWeddingBoard.API.csproj",
+        "Action": "Start",
+        "DebugTarget": "http"
+      }
+    ]
+  }
+]

@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MMWedding.Application.Abstractions;
 using MMWeddingBoard.Infrastructure.Persistence;
+using MMWeddingBoard.Infrastructure.Repositories;
 
 namespace MMWeddingBoard.Infrastructure.DependencyInjection;
 
@@ -11,12 +13,11 @@ public static class DependencyInjection
         this IServiceCollection services,
         IConfiguration configuration)
     {
-        var connectionString = configuration.GetConnectionString("DefaultConnection");
-
         services.AddDbContext<WeddingDbContext>(options =>
-            options.UseNpgsql(connectionString));
-        Console.WriteLine(connectionString);
-        
+             options.UseNpgsql(
+                 configuration.GetConnectionString("DefaultConnection")));
+
+        services.AddScoped<IWeddingRepository, WeddingRepository>();
 
         return services;
     }

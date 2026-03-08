@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MMWedding.Application\MMWedding.Application.csproj" />
     <ProjectReference Include="..\MMWeddingBoard.Domain\MMWeddingBoard.Domain.csproj" />
   </ItemGroup>
 

@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "MMWeddingBoard",
   "resources": {
-    "hash": "sha256-k/gR+W8eqcIqUi5efPsi/NQeXKZcPjNu+HAVHRkFnL8=",
+    "hash": "sha256-fCZk5EhxdcQqv6GxwynjyD2rNto3u4hFtXbXoW/u6B8=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-4g0GzvOXSwZvTLca4PrWJkoeltz+V9IF/hEFDcnVros="
     },
@@ -209,10 +209,12 @@
       "mscorlib.wasm": "sha256-OWQk7msdg0kG9vfJqVNUrPJ8JkyUipH2afbnYJLsKjk=",
       "netstandard.wasm": "sha256-+Ya7AWY6kwjwbQw9fHax9L8Qnn+UZKQF05aZE4ZOXiY=",
       "System.Private.CoreLib.wasm": "sha256-ouVBjy2oz9hC308fAFLns0mvmtyaeUDXt3C5DAk1muc=",
-      "MMWeddingBoard.wasm": "sha256-TtEcyszR4DOKdCMiXcPIA7opPyNHFCF4WwyFpEm1pBQ="
+      "MMWeddingBoard.Shared.wasm": "sha256-w08dpeiYsbGIwpYeTJUhYSFYpBxITa6FQlmgzzUDgFI=",
+      "MMWeddingBoard.wasm": "sha256-WkaL7TF1BY6mJOoTcab90HdpfQT8W6A1CukvwJgDsek="
     },
     "pdb": {
-      "MMWeddingBoard.pdb": "sha256-cR/ivqq5nRVrj1w6UwQZpvBuD+s/m/9U+mh/xl4ZGy4="
+      "MMWeddingBoard.Shared.pdb": "sha256-z1J2tIxTwZaFDtmbUtNfHV3+vSiZnJ4npwH/sINjn4A=",
+      "MMWeddingBoard.pdb": "sha256-sgBF2l4lwrI3vBOaywymdjgpCqSj+4uALJAV4XN1QHg="
     }
   },
   "cacheBootResources": true,

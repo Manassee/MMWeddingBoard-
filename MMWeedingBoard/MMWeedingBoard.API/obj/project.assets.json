@@ -1363,6 +1363,23 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
+      "MMWedding.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "MMWeddingBoard.Domain": "1.0.0",
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Configuration.FileExtensions": "8.0.1",
+          "Microsoft.Extensions.Configuration.Json": "8.0.1",
+          "Microsoft.Extensions.DependencyInjection": "8.0.1"
+        },
+        "compile": {
+          "bin/placeholder/MMWedding.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MMWedding.Application.dll": {}
+        }
+      },
       "MMWeddingBoard.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -1378,6 +1395,7 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Aspire.Npgsql.EntityFrameworkCore.PostgreSQL": "13.1.0",
+          "MMWedding.Application": "1.0.0",
           "MMWeddingBoard.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.23",
           "Microsoft.Extensions.Configuration.Json": "8.0.1",
@@ -3676,6 +3694,11 @@
         "system.threading.channels.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "MMWedding.Application/1.0.0": {
+      "type": "project",
+      "path": "../MMWedding.Application/MMWedding.Application.csproj",
+      "msbuildProject": "../MMWedding.Application/MMWedding.Application.csproj"
     },
     "MMWeddingBoard.Domain/1.0.0": {
       "type": "project",
