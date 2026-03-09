@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6BA91730-D222-F42F-93D5-B3D694E91522}|MMWeddingBoard\\MMWeddingBoard.csproj|c:\\users\\manav\\source\\weeding\\mmweedingboard\\mmweddingboard\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{6BA91730-D222-F42F-93D5-B3D694E91522}|MMWeddingBoard\\MMWeddingBoard.csproj|solutionrelative:mmweddingboard\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{6BA91730-D222-F42F-93D5-B3D694E91522}|MMWeddingBoard\\MMWeddingBoard.csproj|c:\\users\\manav\\source\\weeding\\mmweedingboard\\mmweddingboard\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6BA91730-D222-F42F-93D5-B3D694E91522}|MMWeddingBoard\\MMWeddingBoard.csproj|solutionrelative:mmweddingboard\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{423334E3-B389-0B20-0E5D-015F631799B4}|MMWeedingBoard.API\\MMWeddingBoard.API.csproj|c:\\users\\manav\\source\\weeding\\mmweedingboard\\mmweedingboard.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{423334E3-B389-0B20-0E5D-015F631799B4}|MMWeedingBoard.API\\MMWeddingBoard.API.csproj|solutionrelative:mmweedingboard.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{6BA91730-D222-F42F-93D5-B3D694E91522}|MMWeddingBoard\\MMWeddingBoard.csproj|c:\\users\\manav\\source\\weeding\\mmweedingboard\\mmweddingboard\\shared\\theme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BA91730-D222-F42F-93D5-B3D694E91522}|MMWeddingBoard\\MMWeddingBoard.csproj|solutionrelative:mmweddingboard\\shared\\theme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{423334E3-B389-0B20-0E5D-015F631799B4}|MMWeedingBoard.API\\MMWeddingBoard.API.csproj|c:\\users\\manav\\source\\weeding\\mmweedingboard\\mmweedingboard.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{423334E3-B389-0B20-0E5D-015F631799B4}|MMWeedingBoard.API\\MMWeddingBoard.API.csproj|solutionrelative:mmweedingboard.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6BA91730-D222-F42F-93D5-B3D694E91522}|MMWeddingBoard\\MMWeddingBoard.csproj|c:\\users\\manav\\source\\weeding\\mmweedingboard\\mmweddingboard\\shared\\splashscreen.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6BA91730-D222-F42F-93D5-B3D694E91522}|MMWeddingBoard\\MMWeddingBoard.csproj|solutionrelative:mmweddingboard\\shared\\splashscreen.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6BA91730-D222-F42F-93D5-B3D694E91522}|MMWeddingBoard\\MMWeddingBoard.csproj|c:\\users\\manav\\source\\weeding\\mmweedingboard\\mmweddingboard\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6BA91730-D222-F42F-93D5-B3D694E91522}|MMWeddingBoard\\MMWeddingBoard.csproj|solutionrelative:mmweddingboard\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6BA91730-D222-F42F-93D5-B3D694E91522}|MMWeddingBoard\\MMWeddingBoard.csproj|c:\\users\\manav\\source\\weeding\\mmweedingboard\\mmweddingboard\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6BA91730-D222-F42F-93D5-B3D694E91522}|MMWeddingBoard\\MMWeddingBoard.csproj|solutionrelative:mmweddingboard\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 30,
+          "SelectedChildIndex": 29,
           "Children": [
             {
               "$type": "Bookmark",
@@ -146,54 +146,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeedingBoard.API\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "MMWeedingBoard.API\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeedingBoard.API\\Properties\\launchSettings.json",
-              "RelativeToolTip": "MMWeedingBoard.API\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-03-08T23:25:07.909Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "MMWeddingBoard\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard\\Properties\\launchSettings.json",
-              "RelativeToolTip": "MMWeddingBoard\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-03-08T23:12:32.585Z",
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "MMWeddingBoard\\Layout\\MainLayout.razor",
+              "ToolTip": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "MMWeddingBoard\\Layout\\MainLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-09T00:34:28.443Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard\\Program.cs",
-              "RelativeDocumentMoniker": "MMWeddingBoard\\Program.cs",
-              "ToolTip": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard\\Program.cs",
-              "RelativeToolTip": "MMWeddingBoard\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA3AAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Theme.cs",
+              "DocumentMoniker": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard\\Shared\\Theme.cs",
+              "RelativeDocumentMoniker": "MMWeddingBoard\\Shared\\Theme.cs",
+              "ToolTip": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard\\Shared\\Theme.cs",
+              "RelativeToolTip": "MMWeddingBoard\\Shared\\Theme.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG0AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-08T23:07:28.581Z",
+              "WhenOpened": "2026-03-09T00:11:33.312Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeedingBoard.API\\Program.cs",
-              "RelativeDocumentMoniker": "MMWeedingBoard.API\\Program.cs",
-              "ToolTip": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeedingBoard.API\\Program.cs",
-              "RelativeToolTip": "MMWeedingBoard.API\\Program.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAAADEAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-08T23:07:22.483Z",
+              "Title": "SplashScreen.razor",
+              "DocumentMoniker": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard\\Shared\\SplashScreen.razor",
+              "RelativeDocumentMoniker": "MMWeddingBoard\\Shared\\SplashScreen.razor",
+              "ToolTip": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard\\Shared\\SplashScreen.razor",
+              "RelativeToolTip": "MMWeddingBoard\\Shared\\SplashScreen.razor",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAwwNUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-09T00:08:28.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "MMWeddingBoard\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard\\Pages\\Home.razor",
+              "RelativeToolTip": "MMWeddingBoard\\Pages\\Home.razor",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAuwKcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-08T23:59:29.291Z",
               "EditorCaption": ""
             }
           ]

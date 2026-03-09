@@ -1,0 +1,5 @@
+wwwroot\css\app.css
+wwwroot\images\196.png
+wwwroot\images\512.png
+wwwroot\index.html
+wwwroot\manifest.webmanifest

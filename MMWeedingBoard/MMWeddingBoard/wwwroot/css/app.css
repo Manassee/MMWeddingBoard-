@@ -75,3 +75,8 @@
 code {
     color: #c02d76;
 }
+
+.mud-typography-subtitle1,
+.mud-typography-subtitle2 {
+    font-style: italic;
+}

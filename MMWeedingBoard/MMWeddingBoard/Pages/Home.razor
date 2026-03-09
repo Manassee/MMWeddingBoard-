@@ -1,46 +1,419 @@
 ﻿@page "/"
 @inject HttpClient Http
+@using MMWeddingBoard.Shared
 @using MMWeddingBoard.Shared.Dtos
+@implements IDisposable
 
-<h1>Meine Hochzeiten</h1>
+<SplashScreen OnFinished="OnSplashFinished" />
 
-@if (fehler != null)
+@if (_splashDone)
 {
-    <p style="color:red">@fehler</p>
-}
-else if (daten == null)
-{
-    <p>⏳ Lade...</p>
-}
-else if (!daten.Any())
-{
-    <p>Keine Hochzeiten gefunden.</p>
-}
-else
-{
-    @foreach (var w in daten)
-    {
-        <div>
-            <h3>@w.Title</h3>
-            <p>📅 @w.EventDate</p>
-            <p>📍 @w.Location</p>
+    <div class="home-page @(_pageVisible ? "visible" : "")">
+
+        <!-- ── HERO ── -->
+        <div class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <div class="hero-ring">
+                    <MudAvatar Style="width:110px;height:110px;border:2px solid rgba(212,175,55,0.55);box-shadow:0 6px 24px rgba(184,137,26,0.18);">
+                        <MudImage Src="images/M_M.png" Alt="M&M" ObjectFit="ObjectFit.Cover" Width="110" Height="110" />
+                    </MudAvatar>
+                </div>
+                <p class="hero-eyebrow">Sie heiraten</p>
+                <h1 class="hero-title">Manassé <span class="amp">&</span> Myriam</h1>
+                <p class="hero-date">✦ 2026 ✦</p>
+            </div>
         </div>
-    }
+
+        <!-- ── COUNTDOWN ── -->
+        <div class="countdown-wrap">
+            <p class="section-label">Noch</p>
+            <div class="countdown-row">
+                <div class="cd-item">
+                    <MudPaper Elevation="2" Class="cd-box">
+                        <span class="cd-num">@_days</span>
+                    </MudPaper>
+                    <span class="cd-label">Tage</span>
+                </div>
+                <span class="cd-sep">:</span>
+                <div class="cd-item">
+                    <MudPaper Elevation="2" Class="cd-box">
+                        <span class="cd-num">@_hours</span>
+                    </MudPaper>
+                    <span class="cd-label">Stunden</span>
+                </div>
+                <span class="cd-sep">:</span>
+                <div class="cd-item">
+                    <MudPaper Elevation="2" Class="cd-box">
+                        <span class="cd-num">@_minutes</span>
+                    </MudPaper>
+                    <span class="cd-label">Minuten</span>
+                </div>
+                <span class="cd-sep">:</span>
+                <div class="cd-item">
+                    <MudPaper Elevation="2" Class="cd-box">
+                        <span class="cd-num">@_seconds</span>
+                    </MudPaper>
+                    <span class="cd-label">Sekunden</span>
+                </div>
+            </div>
+            <p class="cd-sub">bis zum schönsten Tag</p>
+        </div>
+
+        <!-- ── STATS ── -->
+        <div class="section stats-wrap">
+            <div class="section-header">
+                <div class="section-line"></div>
+                <MudText Typo="Typo.overline" Class="section-title">Gäste Übersicht</MudText>
+                <div class="section-line"></div>
+            </div>
+
+            @if (_ladeError != null)
+            {
+                <MudAlert Severity="Severity.Error" Variant="Variant.Outlined" Class="mb-2">
+                    @_ladeError
+                </MudAlert>
+            }
+            else if (_weddings == null)
+            {
+                <div class="d-flex justify-center pa-4">
+                    <MudProgressCircular Color="Color.Warning" Indeterminate="true" Size="Size.Small" />
+                </div>
+            }
+            else
+            {
+                <MudGrid Spacing="2">
+                    <MudItem xs="6">
+                        <MudPaper Class="stat-card stat-gold" Elevation="1">
+                            <span class="stat-icon">💍</span>
+                            <span class="stat-number">@_weddings.Count</span>
+                            <MudText Typo="Typo.caption" Class="stat-label">Hochzeiten</MudText>
+                        </MudPaper>
+                    </MudItem>
+                    <MudItem xs="6">
+                        <MudPaper Class="stat-card" Elevation="1">
+                            <span class="stat-icon">👥</span>
+                            <span class="stat-number">—</span>
+                            <MudText Typo="Typo.caption" Class="stat-label">Gäste Total</MudText>
+                        </MudPaper>
+                    </MudItem>
+                    <MudItem xs="6">
+                        <MudPaper Class="stat-card stat-rose" Elevation="1">
+                            <span class="stat-icon">✅</span>
+                            <span class="stat-number">—</span>
+                            <MudText Typo="Typo.caption" Class="stat-label">Zugesagt</MudText>
+                        </MudPaper>
+                    </MudItem>
+                    <MudItem xs="6">
+                        <MudPaper Class="stat-card" Elevation="1">
+                            <span class="stat-icon">❌</span>
+                            <span class="stat-number">—</span>
+                            <MudText Typo="Typo.caption" Class="stat-label">Abgesagt</MudText>
+                        </MudPaper>
+                    </MudItem>
+                </MudGrid>
+            }
+        </div>
+
+        <!-- ── SCHNELLZUGRIFF ── -->
+        <div class="section quicklinks-wrap">
+            <div class="section-header">
+                <div class="section-line"></div>
+                <MudText Typo="Typo.overline" Class="section-title">Verwaltung</MudText>
+                <div class="section-line"></div>
+            </div>
+            <MudGrid Spacing="2">
+                <MudItem xs="6">
+                    <MudPaper Class="ql-card" Elevation="1" @onclick='() => Nav("/gaeste")'>
+                        <span class="ql-icon">👥</span>
+                        <span class="ql-title">Gästeliste</span>
+                        <span class="ql-desc">Alle Gäste verwalten</span>
+                    </MudPaper>
+                </MudItem>
+                <MudItem xs="6">
+                    <MudPaper Class="ql-card" Elevation="1" @onclick='() => Nav("/rsvp")'>
+                        <span class="ql-icon">📩</span>
+                        <span class="ql-title">RSVP</span>
+                        <span class="ql-desc">Einladungen & QR-Codes</span>
+                    </MudPaper>
+                </MudItem>
+                <MudItem xs="6">
+                    <MudPaper Class="ql-card" Elevation="1" @onclick='() => Nav("/statistik")'>
+                        <span class="ql-icon">📊</span>
+                        <span class="ql-title">Statistik</span>
+                        <span class="ql-desc">Dashboard & Auswertung</span>
+                    </MudPaper>
+                </MudItem>
+                <MudItem xs="6">
+                    <MudPaper Class="ql-card" Elevation="1" @onclick='() => Nav("/einstellungen")'>
+                        <span class="ql-icon">⚙️</span>
+                        <span class="ql-title">Einstellungen</span>
+                        <span class="ql-desc">App konfigurieren</span>
+                    </MudPaper>
+                </MudItem>
+            </MudGrid>
+        </div>
+
+        <!-- ── FOOTER ── -->
+        <div class="home-footer">
+            <MudText Typo="Typo.body2" Class="footer-title">
+                M<span class="amp-sm">&</span>M WeddingBoard 💍
+            </MudText>
+            <MudText Typo="Typo.caption" Class="footer-sub">
+                Mit Liebe gebaut für Manassé &amp; Myriam
+            </MudText>
+        </div>
+
+    </div>
 }
 
 @code {
-    private IReadOnlyList<WeddingDto>? daten;
-    private string? fehler;
+    [Inject] private NavigationManager Navigation { get; set; } = default!;
+
+    private bool _splashDone = false;
+    private bool _pageVisible = false;
+    private IReadOnlyList<WeddingDto>? _weddings;
+    private string? _ladeError;
+
+    // ── Hochzeitsdatum hier anpassen ──
+    private readonly DateTime _weddingDate = new DateTime(2027, 5, 15, 14, 0, 0);
+    // ──────────────────────────────────
+
+    private string _days = "--", _hours = "--", _minutes = "--", _seconds = "--";
+    private System.Threading.Timer? _timer;
+
+    private void Nav(string url) => Navigation.NavigateTo(url);
+
+    private void OnSplashFinished()
+    {
+        _splashDone = true;
+        StateHasChanged();
+        Task.Delay(50).ContinueWith(_ =>
+        {
+            _pageVisible = true;
+            InvokeAsync(StateHasChanged);
+        });
+    }
 
     protected override async Task OnInitializedAsync()
     {
+        UpdateCountdown(null);
+        _timer = new System.Threading.Timer(UpdateCountdown, null, 0, 1000);
         try
         {
-            daten = await Http.GetFromJsonAsync<IReadOnlyList<WeddingDto>>("api/weddings");
+            _weddings = await Http.GetFromJsonAsync<IReadOnlyList<WeddingDto>>("api/weddings");
         }
         catch (Exception ex)
         {
-            fehler = $"API nicht erreichbar: {ex.Message}";
+            _ladeError = $"Daten konnten nicht geladen werden: {ex.Message}";
         }
     }
+
+    private void UpdateCountdown(object? _)
+    {
+        var r = _weddingDate - DateTime.Now;
+        if (r <= TimeSpan.Zero) { _days = _hours = _minutes = _seconds = "00"; }
+        else
+        {
+            _days = ((int)r.TotalDays).ToString("D3");
+            _hours = r.Hours.ToString("D2");
+            _minutes = r.Minutes.ToString("D2");
+            _seconds = r.Seconds.ToString("D2");
+        }
+        InvokeAsync(StateHasChanged);
+    }
+
+    public void Dispose() => _timer?.Dispose();
 }
+
+
+<style>
+
+    @@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&display=swap');
+
+    :root {
+        --ivory: #fdf9f2;
+        --ivory-md: #f5ead8;
+        --ivory-dk: #ede0c4;
+        --gold: #d4af37;
+        --gold-dk: #b8891a;
+        --text-dk: #3d2b0e;
+        --text-md: #6b4f2a;
+        --text-lt: #9c7a4a;
+    }
+    /* Seiten-Hintergrund überschreiben (MudBlazor Standard ist grau) */
+    .mud-main-content, .mud-layout, body {
+        background: var(--ivory) !important;
+    }
+
+    .home-page {
+        min-height: 100vh;
+        background: var(--ivory);
+        opacity: 0; transform: translateY(12px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+        font-family: 'Cormorant Garamond', serif;
+    }
+    .home-page.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── HERO ── */
+    .hero {
+        position: relative; text-align: center; overflow: hidden;
+        background: linear-gradient(175deg, #fdf9f2 0%, #f5ead8 60%, #ede0c4 100%);
+        padding: 52px 24px 36px;
+        border-bottom: 1px solid rgba(212,175,55,0.2);
+    }
+    .hero-bg {
+        position: absolute; inset: 0; pointer-events: none;
+        background:
+            radial-gradient(circle at 75% 25%, rgba(212,175,55,0.1) 0%, transparent 55%),
+            radial-gradient(circle at 25% 85%, rgba(212,175,55,0.06) 0%, transparent 50%);
+    }
+    .hero-content {
+        position: relative; z-index: 1;
+        display: flex; flex-direction: column; align-items: center; gap: 6px;
+    }
+    .hero-ring {
+        position: relative; width: 110px; height: 110px; margin-bottom: 8px;
+    }
+    .hero-ring::before {
+        content: ''; position: absolute; inset: -6px; border-radius: 50%;
+        border: 1px solid rgba(212,175,55,0.38);
+    }
+    .hero-eyebrow {
+        font-size: 0.7rem; font-style: italic; letter-spacing: 0.32em;
+        color: var(--gold-dk); text-transform: uppercase;
+    }
+    .hero-title {
+        font-family: 'Cinzel', serif; font-size: clamp(1.5rem, 5vw, 1.85rem);
+        font-weight: 400; color: var(--text-dk); line-height: 1.2;
+    }
+    .hero-title .amp {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic; color: var(--gold-dk);
+    }
+    .hero-date {
+        font-family: 'Cinzel', serif; font-size: 0.72rem;
+        letter-spacing: 0.42em; color: var(--gold-dk); opacity: 0.75;
+    }
+
+    /* ── COUNTDOWN ── */
+    .countdown-wrap {
+        background: linear-gradient(135deg, #fdf6e8 0%, #f9eecc 100%);
+        padding: 24px 16px; text-align: center;
+        border-bottom: 1px solid rgba(212,175,55,0.15);
+    }
+    .section-label {
+        font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.45em;
+        color: var(--gold-dk); text-transform: uppercase; margin-bottom: 14px; opacity: 0.8;
+    }
+    .countdown-row {
+        display: flex; align-items: center; justify-content: center; gap: 2px;
+    }
+    .cd-item { display: flex; flex-direction: column; align-items: center; }
+    .cd-box {
+        background: white !important;
+        border: 1px solid rgba(212,175,55,0.28) !important;
+        border-radius: 10px !important;
+        padding: 8px 4px !important;
+        width: 62px; text-align: center;
+    }
+    .cd-num {
+        font-family: 'Cinzel', serif; font-size: 2rem; font-weight: 600; line-height: 1;
+        background: linear-gradient(135deg, #c9960c, #d4af37);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        display: block;
+    }
+    .cd-label {
+        font-size: 0.54rem; letter-spacing: 0.18em;
+        color: var(--gold-dk); text-transform: uppercase; margin-top: 5px; opacity: 0.7;
+    }
+    .cd-sep {
+        font-family: 'Cinzel', serif; font-size: 1.5rem;
+        color: rgba(212,175,55,0.48); margin: 0 1px 16px;
+    }
+    .cd-sub {
+        font-style: italic; font-size: 0.82rem;
+        color: var(--text-lt); margin-top: 12px; letter-spacing: 0.08em;
+    }
+
+    /* ── SECTIONS ── */
+    .section { padding: 24px 16px; }
+    .stats-wrap { background: var(--ivory); }
+    .quicklinks-wrap { background: white; }
+
+    .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+    .section-line {
+        flex: 1; height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(212,175,55,0.35), transparent);
+    }
+    .section-title {
+        font-family: 'Cinzel', serif !important; font-size: 0.75rem !important;
+        letter-spacing: 0.22em !important; color: var(--text-md) !important;
+        white-space: nowrap;
+    }
+
+    /* ── STAT CARDS ── */
+    .stat-card {
+        display: flex; flex-direction: column; align-items: center; gap: 3px;
+        padding: 16px 10px; border-radius: 14px !important;
+        border: 1px solid rgba(212,175,55,0.15) !important;
+        background: white !important; cursor: default;
+        transition: transform 0.15s;
+    }
+    .stat-card:active { transform: scale(0.97); }
+    .stat-card.stat-gold {
+        background: linear-gradient(135deg,#fffbf0,#fdf5dc) !important;
+        border-color: rgba(212,175,55,0.4) !important;
+    }
+    .stat-card.stat-rose {
+        background: linear-gradient(135deg,#fff8f8,#fdf0f0) !important;
+        border-color: rgba(200,150,150,0.25) !important;
+    }
+    .stat-icon { font-size: 1.3rem; }
+    .stat-number {
+        font-family: 'Cinzel', serif; font-size: 1.5rem;
+        color: var(--text-dk); font-weight: 600;
+    }
+    .stat-label { color: var(--text-lt) !important; letter-spacing: 0.08em !important; }
+
+    /* ── QUICKLINK CARDS ── */
+    .ql-card {
+        display: flex; flex-direction: column; align-items: center; gap: 5px;
+        padding: 18px 10px; border-radius: 16px !important;
+        background: #fdf9f2 !important; border: 1px solid rgba(212,175,55,0.18) !important;
+        cursor: pointer;
+        transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s, background 0.18s !important;
+    }
+    .ql-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 22px rgba(212,175,55,0.14) !important;
+        border-color: rgba(212,175,55,0.45) !important;
+        background: #fffbf0 !important;
+    }
+    .ql-icon { font-size: 1.5rem; }
+    .ql-title {
+        font-family: 'Cinzel', serif; font-size: 0.75rem;
+        color: var(--text-dk); letter-spacing: 0.08em;
+    }
+    .ql-desc {
+        font-size: 0.62rem; color: var(--text-lt);
+        font-style: italic; text-align: center;
+    }
+
+    /* ── FOOTER ── */
+    .home-footer {
+        background: linear-gradient(135deg, #f5ead8 0%, #ede0c4 100%);
+        text-align: center; padding: 26px 18px;
+        border-top: 1px solid rgba(212,175,55,0.25);
+    }
+    .footer-title {
+        font-family: 'Cinzel', serif !important; letter-spacing: 0.15em !important;
+        color: #8a6020 !important;
+    }
+    .footer-sub {
+        font-family: 'Cormorant Garamond', serif !important; font-style: italic !important;
+        color: var(--gold-dk) !important; opacity: 0.65; margin-top: 4px;
+    }
+    .amp-sm { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+</style>
+
