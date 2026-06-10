@@ -22,7 +22,8 @@ namespace MMWedding.Application.Services
         public async Task<Guid> CreateAsync(CreateWeddingRequest request, CancellationToken ct = default)
         {
             Wedding wedding = new Wedding(
-                request.Title,
+                request.BrideName,
+                request.GroomName,
                 request.EventDate,
                 request.Location);
 
@@ -51,16 +52,15 @@ namespace MMWedding.Application.Services
         public async Task<bool> UpdateAsync(Guid id, UpdateWeddingRequest request, CancellationToken ct = default)
         {
             var wedding = await _repository.GetForUpdateAsync(id, ct);
-
             if (wedding is null)
                 return false;
 
-            wedding.Rename(request.Title);
+            wedding.RenameBride(request.BrideName);
+            wedding.RenameGroom(request.GroomName);
             wedding.SetLocation(request.Location);
             wedding.SetEventDate(request.EventDate);
 
             await _repository.SaveChangesAsync(ct);
-
             return true;
         }
     }

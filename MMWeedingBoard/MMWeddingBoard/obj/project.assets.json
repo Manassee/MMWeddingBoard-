@@ -453,13 +453,13 @@
           }
         }
       },
-      "Microsoft.NET.ILLink.Tasks/8.0.24": {
+      "Microsoft.NET.ILLink.Tasks/8.0.16": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "Microsoft.NET.Sdk.WebAssembly.Pack/10.0.3": {
+      "Microsoft.NET.Sdk.WebAssembly.Pack/9.0.5": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.props": {},
@@ -970,13 +970,13 @@
           }
         }
       },
-      "Microsoft.NET.ILLink.Tasks/8.0.24": {
+      "Microsoft.NET.ILLink.Tasks/8.0.16": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "Microsoft.NET.Sdk.WebAssembly.Pack/10.0.3": {
+      "Microsoft.NET.Sdk.WebAssembly.Pack/9.0.5": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.props": {},
@@ -1885,10 +1885,10 @@
         "microsoft.jsinterop.webassembly.nuspec"
       ]
     },
-    "Microsoft.NET.ILLink.Tasks/8.0.24": {
-      "sha512": "1gnadp//+DoGJvV4AFdzPqYPxkypaWYjYMCr7KAacV0iadsHz1nU+rrkoxBCna4FCmeKH49CisEwa7g94/MbEg==",
+    "Microsoft.NET.ILLink.Tasks/8.0.16": {
+      "sha512": "0H1QaKpVibe++Zx6EYJQGhrpfz2bBPGiQ7Rpsmx8I3+oKv+ZRRIfVfmcj50KuZlhhRE6V02y5bUjP+V2oPM2ng==",
       "type": "package",
-      "path": "microsoft.net.illink.tasks/8.0.24",
+      "path": "microsoft.net.illink.tasks/8.0.16",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -1902,7 +1902,7 @@
         "build/Microsoft.NET.ILLink.Analyzers.props",
         "build/Microsoft.NET.ILLink.Tasks.props",
         "build/Microsoft.NET.ILLink.targets",
-        "microsoft.net.illink.tasks.8.0.24.nupkg.sha512",
+        "microsoft.net.illink.tasks.8.0.16.nupkg.sha512",
         "microsoft.net.illink.tasks.nuspec",
         "tools/net472/ILLink.Tasks.dll",
         "tools/net472/ILLink.Tasks.dll.config",
@@ -1936,15 +1936,16 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.NET.Sdk.WebAssembly.Pack/10.0.3": {
-      "sha512": "Wv9ugg75HxuYeBxJSoK2UPN6lpqsASkyZwd90bdRyVKOtaXZFaKg7R+dYqbZSHJXAIxC1HOcYR0imuIcKpI1yw==",
+    "Microsoft.NET.Sdk.WebAssembly.Pack/9.0.5": {
+      "sha512": "h1210SGJTqvciPbSMEJjSRa4yc+zCEDeyoc9o3Fc5hScP9v+26INSOMLf4OwNw+oTz4nAwBo+rc5V4FQLWB1pQ==",
       "type": "package",
-      "path": "microsoft.net.sdk.webassembly.pack/10.0.3",
+      "path": "microsoft.net.sdk.webassembly.pack/9.0.5",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
+        "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "WasmAppHost/BrowserDebugHost.deps.json",
         "WasmAppHost/BrowserDebugHost.dll",
@@ -1969,12 +1970,12 @@
         "build/Microsoft.NET.Sdk.WebAssembly.Pack.targets",
         "build/Wasm.web.config",
         "build/browser.runtimeconfig.template.json",
-        "microsoft.net.sdk.webassembly.pack.10.0.3.nupkg.sha512",
+        "microsoft.net.sdk.webassembly.pack.9.0.5.nupkg.sha512",
         "microsoft.net.sdk.webassembly.pack.nuspec",
-        "tools/net10.0/Microsoft.NET.Sdk.WebAssembly.Pack.Tasks.dll",
-        "tools/net10.0/Microsoft.NET.WebAssembly.Webcil.dll",
         "tools/net472/Microsoft.NET.Sdk.WebAssembly.Pack.Tasks.dll",
-        "tools/net472/Microsoft.NET.WebAssembly.Webcil.dll"
+        "tools/net472/Microsoft.NET.WebAssembly.Webcil.dll",
+        "tools/net9.0/Microsoft.NET.Sdk.WebAssembly.Pack.Tasks.dll",
+        "tools/net9.0/Microsoft.NET.WebAssembly.Webcil.dll"
       ]
     },
     "MudBlazor/9.1.0": {
@@ -2048,29 +2049,29 @@
       "MMWeddingBoard.Shared >= 1.0.0",
       "Microsoft.AspNetCore.Components.WebAssembly >= 8.0.22",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 8.0.22",
-      "Microsoft.NET.ILLink.Tasks >= 8.0.24",
-      "Microsoft.NET.Sdk.WebAssembly.Pack >= 10.0.3",
+      "Microsoft.NET.ILLink.Tasks >= 8.0.16",
+      "Microsoft.NET.Sdk.WebAssembly.Pack >= 9.0.5",
       "MudBlazor >= 9.1.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\manav\\.nuget\\packages\\": {},
+    "C:\\Users\\mmazu\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard\\MMWeddingBoard.csproj",
+      "projectUniqueName": "C:\\Users\\mmazu\\Source\\Repos\\MMWeddingBoard-\\MMWeedingBoard\\MMWeddingBoard\\MMWeddingBoard.csproj",
       "projectName": "MMWeddingBoard",
-      "projectPath": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard\\MMWeddingBoard.csproj",
-      "packagesPath": "C:\\Users\\manav\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard\\obj\\",
+      "projectPath": "C:\\Users\\mmazu\\Source\\Repos\\MMWeddingBoard-\\MMWeedingBoard\\MMWeddingBoard\\MMWeddingBoard.csproj",
+      "packagesPath": "C:\\Users\\mmazu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mmazu\\Source\\Repos\\MMWeddingBoard-\\MMWeedingBoard\\MMWeddingBoard\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\manav\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mmazu\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2079,14 +2080,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard.Shared\\MMWeddingBoard.Shared.csproj": {
-              "projectPath": "C:\\Users\\manav\\source\\Weeding\\MMWeedingBoard\\MMWeddingBoard.Shared\\MMWeddingBoard.Shared.csproj"
+            "C:\\Users\\mmazu\\Source\\Repos\\MMWeddingBoard-\\MMWeedingBoard\\MMWeddingBoard.Shared\\MMWeddingBoard.Shared.csproj": {
+              "projectPath": "C:\\Users\\mmazu\\Source\\Repos\\MMWeddingBoard-\\MMWeedingBoard\\MMWeddingBoard.Shared\\MMWeddingBoard.Shared.csproj"
             }
           }
         }
@@ -2101,7 +2103,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "10.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -2119,13 +2121,13 @@
           "Microsoft.NET.ILLink.Tasks": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[8.0.24, )",
+            "version": "[8.0.16, )",
             "autoReferenced": true
           },
           "Microsoft.NET.Sdk.WebAssembly.Pack": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[10.0.3, )",
+            "version": "[9.0.5, )",
             "autoReferenced": true
           },
           "MudBlazor": {
@@ -2147,7 +2149,7 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-            "version": "[8.0.24, 8.0.24]"
+            "version": "[8.0.16, 8.0.16]"
           }
         ],
         "frameworkReferences": {
@@ -2155,7 +2157,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

@@ -7,8 +7,6 @@ build_property.MudDebugAnalyzer =
 build_property.MudAllowedAttributePattern = 
 build_property.MudAllowedAttributeList = 
 build_property.TargetFramework = net8.0
-build_property.TargetFrameworkIdentifier = .NETCoreApp
-build_property.TargetFrameworkVersion = v8.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = 
 build_property.ProjectTypeGuids = 
@@ -18,37 +16,37 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = MMWeddingBoard
 build_property.RootNamespace = MMWeddingBoard
-build_property.ProjectDir = C:\Users\manav\source\Weeding\MMWeedingBoard\MMWeddingBoard\
+build_property.ProjectDir = C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeddingBoard\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = false
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\manav\source\Weeding\MMWeedingBoard\MMWeddingBoard
+build_property.MSBuildProjectDirectory = C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeddingBoard
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/manav/source/Weeding/MMWeedingBoard/MMWeddingBoard/App.razor]
+[C:/Users/mmazu/Source/Repos/MMWeddingBoard-/MMWeedingBoard/MMWeddingBoard/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manav/source/Weeding/MMWeedingBoard/MMWeddingBoard/Layout/MainLayout.razor]
+[C:/Users/mmazu/Source/Repos/MMWeddingBoard-/MMWeedingBoard/MMWeddingBoard/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manav/source/Weeding/MMWeedingBoard/MMWeddingBoard/Pages/Component.razor]
+[C:/Users/mmazu/Source/Repos/MMWeddingBoard-/MMWeedingBoard/MMWeddingBoard/Pages/Component.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcG9uZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manav/source/Weeding/MMWeedingBoard/MMWeddingBoard/Pages/Home.razor]
+[C:/Users/mmazu/Source/Repos/MMWeddingBoard-/MMWeedingBoard/MMWeddingBoard/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manav/source/Weeding/MMWeedingBoard/MMWeddingBoard/Shared/SplashScreen.razor]
+[C:/Users/mmazu/Source/Repos/MMWeddingBoard-/MMWeedingBoard/MMWeddingBoard/Shared/SplashScreen.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFNwbGFzaFNjcmVlbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manav/source/Weeding/MMWeedingBoard/MMWeddingBoard/_Imports.razor]
+[C:/Users/mmazu/Source/Repos/MMWeddingBoard-/MMWeedingBoard/MMWeddingBoard/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

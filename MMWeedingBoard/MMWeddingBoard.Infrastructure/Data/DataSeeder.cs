@@ -22,9 +22,10 @@ namespace MMWeddingBoard.Infrastructure.Data
             // 1) Hochzeit (M&M)
             // -------------------------
             var wedding = new Wedding(
-                title: "M&M WeddingBoard – Manasse & Myriam",
+                brideName: "Myriam",
+                groomName: "Manasse",
                 eventDate: new DateOnly(2026, 10, 03),
-                location: "München"
+                location: "Essen"
             );
 
             await db.AddAsync(wedding);

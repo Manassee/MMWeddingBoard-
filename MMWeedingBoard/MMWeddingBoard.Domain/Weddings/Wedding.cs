@@ -9,69 +9,61 @@ namespace MMWeddingBoard.Domain.Weddings
 {
     public class Wedding : Entity
     {
-        protected Wedding()   
-        { 
-            
-        }
+        public string BrideName { get; private set; } = default!;
+        public string GroomName { get; private set; } = default!;
+        public DateOnly? EventDate { get; private set; }
+        public string? Location { get; private set; }
+        public DateTimeOffset CreatedAt { get; private set; }
+        public DateTimeOffset UpdatedAt { get; private set; }
 
-        public Wedding(string title, DateOnly? eventDate = null, string? location = null)
+        // EF Core
+        protected Wedding() { }
+
+        public Wedding(string brideName, string groomName,
+                       DateOnly? eventDate = null, string? location = null)
         {
-            if (string.IsNullOrWhiteSpace(title))
-                throw new ArgumentException("Titel ist nötig.", nameof(title));
+            if (string.IsNullOrWhiteSpace(brideName))
+                throw new ArgumentException("BrideName darf nicht leer sein.", nameof(brideName));
+            if (string.IsNullOrWhiteSpace(groomName))
+                throw new ArgumentException("GroomName darf nicht leer sein.", nameof(groomName));
 
             Id = Guid.NewGuid();
-            Title = title.Trim();
+            BrideName = brideName.Trim();
+            GroomName = groomName.Trim();
             EventDate = eventDate;
             Location = location?.Trim();
-
             CreatedAt = DateTimeOffset.UtcNow;
             UpdatedAt = CreatedAt;
         }
 
-        public string Title { get; private set; }
-        public DateOnly? EventDate { get; private set; }
-        public string? Location { get; private set; }
-
-        public DateTimeOffset CreatedAt { get; private set; }
-        public DateTimeOffset UpdatedAt { get; private set; }
-
-/* ========================================================================================================================================
- */
-        public void Rename(string title)
+        public void RenameBride(string brideName)
         {
-            if (string.IsNullOrWhiteSpace(title))
-                throw new ArgumentException("Title darf nicht leer sein.", nameof(title));
-
-            Title = title.Trim();
+            if (string.IsNullOrWhiteSpace(brideName))
+                throw new ArgumentException("BrideName darf nicht leer sein.", nameof(brideName));
+            BrideName = brideName.Trim();  // ← war: Title = ...
             Touch();
         }
 
-        /// <summary>
-        /// Datum setzen/entfernen (optional). Kann auch null sein.
-        /// </summary>
+        public void RenameGroom(string groomName)
+        {
+            if (string.IsNullOrWhiteSpace(groomName))
+                throw new ArgumentException("GroomName darf nicht leer sein.", nameof(groomName));
+            GroomName = groomName.Trim();  // ← war: Title = ...
+            Touch();
+        }
+
         public void SetEventDate(DateOnly? date)
         {
             EventDate = date;
             Touch();
         }
 
-        /// <summary>
-        /// Location setzen (optional).
-        /// - null / "" / "   " wird zu null
-        /// - sonst wird getrimmt gespeichert
-        /// </summary>
         public void SetLocation(string? location)
         {
-            if (string.IsNullOrWhiteSpace(location))
-                Location = null;
-            else
-                Location = location.Trim();
-
+            Location = string.IsNullOrWhiteSpace(location) ? null : location.Trim();
             Touch();
         }
 
         private void Touch() => UpdatedAt = DateTimeOffset.UtcNow;
-
-
     }
 }

@@ -14,7 +14,7 @@ public static class DependencyInjection
         IConfiguration configuration)
     {
         services.AddDbContext<WeddingDbContext>(options =>
-             options.UseNpgsql(
+             options.UseSqlite(
                  configuration.GetConnectionString("DefaultConnection")));
 
         services.AddScoped<IWeddingRepository, WeddingRepository>();
