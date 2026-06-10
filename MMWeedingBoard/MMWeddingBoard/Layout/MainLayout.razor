@@ -1,3 +1,19 @@
 ﻿@inherits LayoutComponentBase
 
-@Body
+@* Required *@
+<MudThemeProvider Theme="_theme" />
+<MudPopoverProvider />
+@* Needed for dialogs *@
+<MudDialogProvider />
+@* Needed for snackbars *@
+<MudSnackbarProvider />
+
+<MudLayout>
+    <MudMainContent>
+        @Body
+    </MudMainContent>
+</MudLayout>
+
+@code {
+    private MudBlazor.MudTheme _theme = MMWeddingBoard.Shared.Theme.Create();
+}

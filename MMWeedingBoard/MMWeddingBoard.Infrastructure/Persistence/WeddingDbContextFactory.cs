@@ -34,7 +34,7 @@ namespace MMWeddingBoard.Infrastructure.Persistence
                 
 
             var optionsBuilder = new DbContextOptionsBuilder<WeddingDbContext>();
-            optionsBuilder.UseNpgsql(connectionString, b => b.MigrationsAssembly("MMWeddingBoard.Infrastructure")); // <- Für PostgreSQL
+            optionsBuilder.UseSqlite(connectionString, b => b.MigrationsAssembly("MMWeddingBoard.Infrastructure")); // <- Für PostgreSQL
 
 
             return new WeddingDbContext(optionsBuilder.Options);

@@ -8,7 +8,8 @@ namespace MMWeddingBoard.Shared.Dtos
 {
     public class UpdateWeddingRequest
     {
-        public string Title { get; set; } = default!;
+        public string BrideName { get; set; } = default!;
+        public string GroomName { get; set; } = default!;
         public DateOnly EventDate { get; set; }
         public string? Location { get; set; }
     }

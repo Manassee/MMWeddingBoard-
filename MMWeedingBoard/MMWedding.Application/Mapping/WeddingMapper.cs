@@ -13,7 +13,8 @@ namespace MMWedding.Application.Mapping
         public static WeddingDto ToDto(this Wedding w) => new()
         {
             Id = w.Id,
-            Title = w.Title,
+            BrideName = w.BrideName,
+            GroomName = w.GroomName,
             EventDate = w.EventDate,
             Location = w.Location,
             CreatedAt = w.CreatedAt,

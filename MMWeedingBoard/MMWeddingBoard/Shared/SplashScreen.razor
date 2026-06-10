@@ -1,0 +1,214 @@
+﻿@if(IsVisible)
+{
+    <div class="splash-overlay @(_fadeOut ? "fade-out" : "")">
+        <div class="splash-inner">
+            <div class="splash-ring">
+                <MudAvatar Style="width:190px;height:190px;border:3px solid rgba(212,175,55,0.55);box-shadow:0 8px 32px rgba(184,137,26,0.2);">
+                    <MudImage Src="images/512.png" Alt="M&M" ObjectFit="ObjectFit.Cover" Width="190" Height="190" />
+                </MudAvatar>
+            </div>
+            <p class="sp-eyebrow">Willkommen bei</p>
+            <h1 class="sp-title">M<span class="sp-amp">&</span>M</h1>
+            <p class="sp-names">Manassé &amp; Myriam</p>
+            <p class="sp-divider">💍</p>
+            <p class="sp-tagline">WeddingBoard</p>
+            <div class="sp-dots">
+                <div class="sp-dot"></div>
+                <div class="sp-dot"></div>
+                <div class="sp-dot"></div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+
+    [Parameter] public EventCallback OnFinished { get; set; }
+    public bool IsVisible { get; set; } = true;
+    private bool _fadeOut = false;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await Task.Delay(2800);
+            _fadeOut = true;
+            StateHasChanged();
+            await Task.Delay(700);
+            IsVisible = false;
+            StateHasChanged();
+            await OnFinished.InvokeAsync();
+        }
+    }
+}
+
+<style>
+    @@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&display=swap');
+
+    .splash-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: linear-gradient(160deg, #fdf9f2 0%, #f5ead8 50%, #ede0c4 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 1;
+        transition: opacity 0.7s ease;
+    }
+
+        .splash-overlay::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: radial-gradient(circle at 70% 30%, rgba(212,175,55,0.12) 0%, transparent 55%), radial-gradient(circle at 20% 80%, rgba(212,175,55,0.08) 0%, transparent 50%);
+        }
+
+        .splash-overlay.fade-out {
+            opacity: 0;
+        }
+
+    .splash-inner {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        animation: splashUp 0.9s ease both;
+    }
+
+    @@keyframes splashUp {
+        from {
+            opacity: 0;
+            transform: translateY(24px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .splash-ring {
+        position: relative;
+        width: 190px;
+        height: 190px;
+        margin-bottom: 20px;
+    }
+
+        .splash-ring::before {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border-radius: 50%;
+            border: 1px solid rgba(212,175,55,0.35);
+            animation: ringPulse 2.5s ease-in-out infinite;
+        }
+
+        .splash-ring::after {
+            content: '';
+            position: absolute;
+            inset: -16px;
+            border-radius: 50%;
+            border: 1px solid rgba(212,175,55,0.15);
+            animation: ringPulse 2.5s ease-in-out infinite 0.4s;
+        }
+
+    @@keyframes ringPulse {
+        0%, 100% {
+            opacity: 0.5;
+            transform: scale(1);
+        }
+
+        50% {
+            opacity: 1;
+            transform: scale(1.03);
+        }
+    }
+
+    .sp-eyebrow {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 0.7rem;
+        font-style: italic;
+        letter-spacing: 0.35em;
+        color: #b8891a;
+        text-transform: uppercase;
+        margin-bottom: 2px;
+    }
+
+    .sp-title {
+        font-family: 'Cinzel', serif;
+        font-size: 4.2rem;
+        font-weight: 600;
+        line-height: 1;
+        background: linear-gradient(135deg, #c9960c 0%, #d4af37 40%, #e8c84a 65%, #b8891a 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .sp-amp {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: 3.6rem;
+    }
+
+    .sp-names {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.15rem;
+        font-style: italic;
+        color: #6b4c1e;
+        margin-top: 4px;
+    }
+
+    .sp-divider {
+        font-size: 1.1rem;
+        margin: 5px 0;
+        opacity: 0.7;
+    }
+
+    .sp-tagline {
+        font-family: 'Cinzel', serif;
+        font-size: 0.6rem;
+        letter-spacing: 0.55em;
+        color: #b8891a;
+        opacity: 0.7;
+        text-transform: uppercase;
+    }
+
+    .sp-dots {
+        display: flex;
+        gap: 7px;
+        margin-top: 38px;
+    }
+
+    .sp-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #d4af37;
+        opacity: 0.5;
+        animation: dotPulse 1.2s ease-in-out infinite;
+    }
+
+        .sp-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .sp-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+    @@keyframes dotPulse {
+        0%, 80%, 100% {
+            transform: scale(0.6);
+            opacity: 0.3;
+        }
+
+        40% {
+            transform: scale(1.0);
+            opacity: 1.0;
+        }
+    }
+</style>
