@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MMWeddingBoard.Domain\MMWeddingBoard.Domain.csproj" />
+	  <ProjectReference Include="..\MMWeddingBoard.Shared\MMWeddingBoard.Shared.csproj" />
   </ItemGroup>
 
 </Project>

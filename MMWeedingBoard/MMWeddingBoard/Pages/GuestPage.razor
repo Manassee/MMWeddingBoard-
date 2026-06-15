@@ -1,0 +1,690 @@
+﻿@page "/guestPage"
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@using MMWeddingBoard.Shared.Dtos
+
+
+<div class="gaeste-page">
+
+    <!-- ── HEADER ── -->
+    <div class="gaeste-header">
+        <MudIconButton Icon="@Icons.Material.Filled.ArrowBack"
+                       OnClick='() => Navigation.NavigateTo("/")'
+                       Class="back-btn" />
+        <div>
+            <h1 class="gaeste-title">Gästeliste</h1>
+            <p class="gaeste-sub">@_gefiltert.Count von @_alle.Count Gästen</p>
+        </div>
+        <MudIconButton Icon="@Icons.Material.Filled.PersonAdd"
+                       Class="add-btn"
+                       OnClick="NeuenGastOeffnen" />
+    </div>
+
+    <!-- ── SUCHE ── -->
+    <div class="search-wrap">
+        <MudTextField @bind-Value="_suchtext"
+                      @bind-Value:after="Filtern"
+                      Placeholder="Gast suchen..."
+                      Variant="Variant.Outlined"
+                      Adornment="Adornment.Start"
+                      AdornmentIcon="@Icons.Material.Filled.Search"
+                      Class="search-field"
+                      Clearable="true" />
+    </div>
+
+    <!-- ── FILTER ── -->
+    <div class="filter-wrap">
+        <!-- Alphabetisch -->
+        <div class="filter-row">
+            <span class="filter-label">A–Z</span>
+            <div class="filter-chips">
+                @foreach (var b in _buchstaben)
+                {
+                    <MudChip T="string"
+                             Text="@b"
+                             Class="@(_aktiverBuchstabe == b ? "chip-active" : "chip")"
+                             OnClick="() => BuchstabeWaehlen(b)" />
+                }
+            </div>
+        </div>
+
+        <!-- Seite -->
+        <div class="filter-row">
+            <span class="filter-label">Seite</span>
+            <div class="filter-chips">
+                <MudChip T="string" Text="Alle" Class="@(_seiteFilter == null ? "chip-active" : "chip")" OnClick="() => SeiteWaehlen(null)" />
+                <MudChip T="string" Text="👰 Braut" Class="@(_seiteFilter == "Braut" ? "chip-active" : "chip")" OnClick='() => SeiteWaehlen("Braut")' />
+                <MudChip T="string" Text="🤵 Bräutigam" Class="@(_seiteFilter == "Braeutigam" ? "chip-active" : "chip")" OnClick='() => SeiteWaehlen("Braeutigam")' />
+                <MudChip T="string" Text="💑 Beide" Class="@(_seiteFilter == "Beide" ? "chip-active" : "chip")" OnClick='() => SeiteWaehlen("Beide")' />
+            </div>
+        </div>
+
+        <!-- RSVP Status -->
+        <div class="filter-row">
+            <span class="filter-label">Status</span>
+            <div class="filter-chips">
+                <MudChip T="string" Text="Alle" Class="@(_statusFilter == null ? "chip-active" : "chip")" OnClick="() => StatusWaehlen(null)" />
+                <MudChip T="string" Text="⏳ Ausstehend" Class="@(_statusFilter == GuestStatus.Invited ? "chip-active" : "chip")" OnClick="() => StatusWaehlen(GuestStatus.Invited)" />
+                <MudChip T="string" Text="✅ Zugesagt" Class="@(_statusFilter == GuestStatus.Accepted ? "chip-active" : "chip")" OnClick="() => StatusWaehlen(GuestStatus.Accepted)" />
+                <MudChip T="string" Text="❌ Abgesagt" Class="@(_statusFilter == GuestStatus.Declined ? "chip-active" : "chip")" OnClick="() => StatusWaehlen(GuestStatus.Declined)" />
+            </div>
+        </div>
+    </div>
+
+    <!-- ── LISTE ── -->
+    @if (_ladeError != null)
+    {
+        <MudAlert Severity="Severity.Error" Class="mx-3 mt-3">@_ladeError</MudAlert>
+    }
+    else if (_laedt)
+    {
+        <div class="d-flex justify-center pa-8">
+            <MudProgressCircular Color="Color.Warning" Indeterminate="true" />
+        </div>
+    }
+    else if (_gefiltert.Count == 0)
+    {
+        <div class="empty-state">
+            <span class="empty-icon">👥</span>
+            <p class="empty-text">Keine Gäste gefunden</p>
+            <MudButton Variant="Variant.Outlined" Class="btn-outlined" OnClick="NeuenGastOeffnen">
+                + Ersten Gast hinzufügen
+            </MudButton>
+        </div>
+    }
+    else
+    {
+        <div class="gaeste-liste">
+            @foreach (var gast in _gefiltert)
+            {
+                <MudPaper Class="gast-card" Elevation="1">
+                    <div class="gast-avatar">
+                        <span class="gast-initials">@Initialen(gast)</span>
+                    </div>
+                    <div class="gast-info">
+                        <span class="gast-name">@gast.FirstName @gast.LastName</span>
+                        <div class="gast-meta">
+                            <span class="gast-personen">👥 @gast.PartySize Person(en)</span>
+                            @if (gast.ChildrenCount > 0)
+                            {
+                                <span class="gast-kinder">🧒 @gast.ChildrenCount Kind(er)</span>
+                            }
+                        </div>
+                        <div class="gast-badges">
+                            <span class="badge @StatusKlasse(gast.Status)">@StatusText(gast.Status)</span>
+                        </div>
+                    </div>
+                    <div class="gast-actions">
+                        <MudIconButton Icon="@Icons.Material.Filled.Edit"
+                                       Size="Size.Medium"
+                                       Class="action-btn-edit"
+                                       OnClick="() => GastBearbeiten(gast)" />
+                        <MudIconButton Icon="@Icons.Material.Filled.Delete"
+                                       Size="Size.Medium"
+                                       Class="action-btn-delete"
+                                       OnClick="() => GastLoeschenBestaetigen(gast)" />
+                    </div>
+                </MudPaper>
+            }
+        </div>
+    }
+
+    <!-- ── FAB Button ── -->
+    <MudFab Color="Color.Warning"
+            StartIcon="@Icons.Material.Filled.Add"
+            Class="fab-btn"
+            OnClick="NeuenGastOeffnen" />
+
+</div>
+
+<!-- ── DIALOG: Anlegen / Bearbeiten ── -->
+<MudDialog @bind-Visible="_formDialog">
+    <TitleContent>
+        <MudText Typo="Typo.h6" Class="dialog-title">
+            @(_bearbeitungsId == null ? "Neuen Gast anlegen" : "Gast bearbeiten")
+        </MudText>
+    </TitleContent>
+    <DialogContent>
+        <div class="dialog-form">
+            <MudTextField @bind-Value="_form.FirstName"
+                          Label="Vorname"
+                          Variant="Variant.Outlined"
+                          Class="mb-3" />
+            <MudTextField @bind-Value="_form.LastName"
+                          Label="Nachname"
+                          Variant="Variant.Outlined"
+                          Class="mb-3" />
+            <MudNumericField @bind-Value="_form.PartySize"
+                             Label="Anzahl Personen"
+                             Variant="Variant.Outlined"
+                             Min="1" Max="20"
+                             Class="mb-3" />
+            <MudNumericField @bind-Value="_form.ChildrenCount"
+                             Label="Davon Kinder"
+                             Variant="Variant.Outlined"
+                             Min="0" Max="20"
+                             Class="mb-3" />
+            <MudSelect @bind-Value="_form.Status"
+                       Label="RSVP Status"
+                       Variant="Variant.Outlined"
+                       Class="mb-3">
+                <MudSelectItem Value="GuestStatus.Invited">⏳ Ausstehend</MudSelectItem>
+                <MudSelectItem Value="GuestStatus.Accepted">✅ Zugesagt</MudSelectItem>
+                <MudSelectItem Value="GuestStatus.Declined">❌ Abgesagt</MudSelectItem>
+            </MudSelect>
+        </div>
+        @if (_formFehler != null)
+        {
+            <MudAlert Severity="Severity.Error" Variant="Variant.Outlined">@_formFehler</MudAlert>
+        }
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="() => _formDialog = false" Class="btn-abbrechen">Abbrechen</MudButton>
+        <MudButton Variant="Variant.Filled" OnClick="GastSpeichern" Disabled="_speichertGast" Class="btn-speichern">
+            @if (_speichertGast)
+            {
+                <MudProgressCircular Size="Size.Small" Indeterminate="true" Class="mr-2" />
+            }
+            Speichern
+        </MudButton>
+    </DialogActions>
+</MudDialog>
+
+<!-- ── DIALOG: Löschen ── -->
+<MudDialog @bind-Visible="_loeschDialog">
+    <TitleContent>Gast löschen</TitleContent>
+    <DialogContent>
+        <MudText>
+            Möchtest du <strong>@_zuLoeschen?.FirstName @_zuLoeschen?.LastName</strong> wirklich löschen?
+        </MudText>
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="() => _loeschDialog = false">Abbrechen</MudButton>
+        <MudButton Color="Color.Error" Variant="Variant.Filled" OnClick="GastLoeschen">Löschen</MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+    private Guid? _weddingId;
+    private List<GuestDto> _alle = new();
+    private List<GuestDto> _gefiltert = new();
+    private bool _laedt = true;
+    private string? _ladeError;
+
+    // Filter
+    private string _suchtext = "";
+    private string? _aktiverBuchstabe = null;
+    private string? _seiteFilter = null;
+    private GuestStatus? _statusFilter = null;
+    private List<string> _buchstaben = new() { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
+
+    // Formular
+    private bool _formDialog = false;
+    private bool _speichertGast = false;
+    private string? _formFehler;
+    private Guid? _bearbeitungsId = null;
+    private GuestFormModel _form = new();
+
+    // Löschen
+    private bool _loeschDialog = false;
+    private GuestDto? _zuLoeschen;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var weddings = await Http.GetFromJsonAsync<IReadOnlyList<WeddingDto>>("api/weddings");
+            _weddingId = weddings?.FirstOrDefault()?.Id;
+            if (_weddingId != null)
+                await GaesteLaden();
+        }
+        catch (Exception ex)
+        {
+            _ladeError = $"Fehler: {ex.Message}";
+        }
+        finally
+        {
+            _laedt = false;
+        }
+    }
+
+    private async Task GaesteLaden()
+    {
+        var liste = await Http.GetFromJsonAsync<IReadOnlyList<GuestDto>>(
+            $"api/weddings/{_weddingId}/guests");
+        _alle = liste?.ToList() ?? new();
+        Filtern();
+    }
+
+    private void Filtern()
+    {
+        var q = _alle.AsEnumerable();
+
+        if (!string.IsNullOrWhiteSpace(_suchtext))
+            q = q.Where(g => ($"{g.FirstName} {g.LastName}")
+                .Contains(_suchtext, StringComparison.OrdinalIgnoreCase));
+
+        if (_aktiverBuchstabe != null)
+            q = q.Where(g => g.LastName.StartsWith(_aktiverBuchstabe,
+                StringComparison.OrdinalIgnoreCase));
+
+        if (_statusFilter != null)
+            q = q.Where(g => g.Status == _statusFilter);
+
+        _gefiltert = q.OrderBy(g => g.LastName).ThenBy(g => g.FirstName).ToList();
+        StateHasChanged();
+    }
+
+    private void BuchstabeWaehlen(string b)
+    {
+        _aktiverBuchstabe = _aktiverBuchstabe == b ? null : b;
+        Filtern();
+    }
+
+    private void SeiteWaehlen(string? s) { _seiteFilter = s; Filtern(); }
+    private void StatusWaehlen(GuestStatus? s) { _statusFilter = s; Filtern(); }
+
+    private void NeuenGastOeffnen()
+    {
+        _bearbeitungsId = null;
+        _form = new GuestFormModel { WeddingId = _weddingId ?? Guid.Empty };
+        _formFehler = null;
+        _formDialog = true;
+    }
+
+    private void GastBearbeiten(GuestDto gast)
+    {
+        _bearbeitungsId = gast.Id;
+        _form = new GuestFormModel
+        {
+            WeddingId = gast.WeddingId,
+            FirstName = gast.FirstName,
+            LastName = gast.LastName,
+            PartySize = gast.PartySize,
+            ChildrenCount = gast.ChildrenCount,
+            Status = gast.Status,
+        };
+        _formFehler = null;
+        _formDialog = true;
+    }
+
+    private async Task GastSpeichern()
+    {
+        if (string.IsNullOrWhiteSpace(_form.FirstName) ||
+            string.IsNullOrWhiteSpace(_form.LastName))
+        {
+            _formFehler = "Vor- und Nachname sind Pflichtfelder.";
+            return;
+        }
+
+        _speichertGast = true;
+        _formFehler = null;
+        try
+        {
+            if (_bearbeitungsId == null)
+            {
+                var request = new CreateGuestRequest
+                {
+                    WeddingId = _form.WeddingId,
+                    FirstName = _form.FirstName,
+                    LastName = _form.LastName,
+                    PartySize = _form.PartySize,
+                    ChildrenCount = _form.ChildrenCount,
+                    Status = _form.Status,
+                };
+                await Http.PostAsJsonAsync($"api/weddings/{_weddingId}/guests", request);
+            }
+            else
+            {
+                var request = new UpdateGuestRequest
+                {
+                    FirstName = _form.FirstName,
+                    LastName = _form.LastName,
+                    PartySize = _form.PartySize,
+                    ChildrenCount = _form.ChildrenCount,
+                    Status = _form.Status,
+                };
+                await Http.PutAsJsonAsync(
+                    $"api/weddings/{_weddingId}/guests/{_bearbeitungsId}", request);
+            }
+
+            _formDialog = false;
+            await GaesteLaden();
+        }
+        catch (Exception ex)
+        {
+            _formFehler = $"Fehler: {ex.Message}";
+        }
+        finally
+        {
+            _speichertGast = false;
+        }
+    }
+
+    private void GastLoeschenBestaetigen(GuestDto gast)
+    {
+        _zuLoeschen = gast;
+        _loeschDialog = true;
+    }
+
+    private async Task GastLoeschen()
+    {
+        if (_zuLoeschen == null) return;
+        try
+        {
+            await Http.DeleteAsync(
+                $"api/weddings/{_weddingId}/guests/{_zuLoeschen.Id}");
+            await GaesteLaden();
+        }
+        catch { }
+        finally
+        {
+            _loeschDialog = false;
+            _zuLoeschen = null;
+        }
+    }
+
+    private string Initialen(GuestDto g) =>
+        $"{(g.FirstName.Length > 0 ? g.FirstName[0] : '?')}{(g.LastName.Length > 0 ? g.LastName[0] : '?')}";
+
+    private string StatusText(GuestStatus s) => s switch
+    {
+        GuestStatus.Accepted => "✅ Zugesagt",
+        GuestStatus.Declined => "❌ Abgesagt",
+        _ => "⏳ Ausstehend",
+    };
+
+    private string StatusKlasse(GuestStatus s) => s switch
+    {
+        GuestStatus.Accepted => "badge-green",
+        GuestStatus.Declined => "badge-red",
+        _ => "badge-grey",
+    };
+
+    private class GuestFormModel
+    {
+        public Guid WeddingId { get; set; }
+        public string FirstName { get; set; } = "";
+        public string LastName { get; set; } = "";
+        public int PartySize { get; set; } = 1;
+        public int ChildrenCount { get; set; } = 0;
+        public GuestStatus Status { get; set; } = GuestStatus.Invited;
+    }
+}
+
+<style>
+    @@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
+
+    :root {
+        --ivory: #fdf9f2;
+        --gold: #d4af37;
+        --gold-dk: #b8891a;
+        --text-dk: #3d2b0e;
+        --text-md: #6b4f2a;
+        --text-lt: #9c7a4a;
+    }
+
+    .gaeste-page {
+        min-height: 100vh;
+        background: var(--ivory);
+        padding-bottom: 80px;
+        font-family: 'Cormorant Garamond',serif;
+    }
+
+    /* HEADER */
+    .gaeste-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 20px 16px 12px;
+        background: linear-gradient(175deg,#fdf9f2,#f5ead8);
+        border-bottom: 1px solid rgba(212,175,55,0.2);
+    }
+
+    .back-btn {
+        color: var(--gold-dk) !important;
+    }
+
+    .add-btn {
+        color: var(--gold-dk) !important;
+        margin-left: auto;
+    }
+
+    .gaeste-title {
+        font-family: 'Cinzel',serif;
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: var(--text-dk);
+        margin: 0;
+    }
+
+    .gaeste-sub {
+        font-style: italic;
+        font-size: 0.95rem;
+        color: var(--text-lt);
+        margin: 0;
+    }
+
+    /* SUCHE */
+    .search-wrap {
+        padding: 14px 16px 0;
+    }
+
+    .search-field {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    /* FILTER */
+    .filter-wrap {
+        padding: 12px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .filter-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .filter-label {
+        font-family: 'Cinzel',serif;
+        font-size: 0.85rem;
+        color: var(--text-lt);
+        min-width: 60px;
+        letter-spacing: 0.08em;
+    }
+
+    .filter-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .chip {
+        font-size: 0.85rem !important;
+        border: 1px solid rgba(212,175,55,0.3) !important;
+        color: var(--text-md) !important;
+        background: white !important;
+        border-radius: 20px !important;
+    }
+
+    .chip-active {
+        font-size: 0.85rem !important;
+        background: linear-gradient(135deg,#d4af37,#b8891a) !important;
+        color: white !important;
+        border-radius: 20px !important;
+    }
+
+    /* LISTE */
+    .gaeste-liste {
+        padding: 12px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* GAST CARD */
+    .gast-card {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 16px;
+        border-radius: 16px !important;
+        border: 1px solid rgba(212,175,55,0.18) !important;
+        background: white !important;
+    }
+
+    .gast-avatar {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: linear-gradient(135deg,#d4af37,#b8891a);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .gast-initials {
+        font-family: 'Cinzel',serif;
+        font-size: 1.1rem;
+        color: white;
+        font-weight: 600;
+    }
+
+    .gast-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .gast-name {
+        font-family: 'Cinzel',serif;
+        font-size: 1.1rem;
+        color: var(--text-dk);
+    }
+
+    .gast-meta {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .gast-personen {
+        font-size: 0.9rem;
+        color: var(--text-lt);
+    }
+
+    .gast-kinder {
+        font-size: 0.9rem;
+        color: var(--text-lt);
+    }
+
+    .gast-badges {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        margin-top: 2px;
+    }
+
+    .badge {
+        font-size: 0.82rem;
+        padding: 2px 10px;
+        border-radius: 12px;
+        font-style: italic;
+    }
+
+    .badge-green {
+        background: #f0fdf4;
+        color: #166534;
+        border: 1px solid #bbf7d0;
+    }
+
+    .badge-red {
+        background: #fef2f2;
+        color: #991b1b;
+        border: 1px solid #fecaca;
+    }
+
+    .badge-grey {
+        background: #f9f5e8;
+        color: var(--text-md);
+        border: 1px solid rgba(212,175,55,0.3);
+    }
+
+    .gast-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .action-btn-edit {
+        color: var(--gold-dk) !important;
+    }
+
+    .action-btn-delete {
+        color: #c0392b !important;
+    }
+
+    /* EMPTY STATE */
+    .empty-state {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        padding: 60px 20px;
+    }
+
+    .empty-icon {
+        font-size: 3.5rem;
+        opacity: 0.4;
+    }
+
+    .empty-text {
+        font-family: 'Cinzel',serif;
+        font-size: 1.1rem;
+        color: var(--text-lt);
+    }
+
+    /* FAB */
+    .fab-btn {
+        position: fixed !important;
+        bottom: 24px;
+        right: 24px;
+        z-index: 100;
+        box-shadow: 0 4px 20px rgba(212,175,55,0.4) !important;
+    }
+
+    /* DIALOG */
+    .dialog-title {
+        font-family: 'Cinzel',serif !important;
+        color: var(--text-dk) !important;
+    }
+
+    .dialog-form {
+        display: flex;
+        flex-direction: column;
+        min-width: 300px;
+    }
+
+    .btn-abbrechen {
+        color: var(--text-lt) !important;
+    }
+
+    .btn-speichern {
+        background: linear-gradient(135deg,#d4af37,#b8891a) !important;
+        color: white !important;
+        font-family: 'Cinzel',serif !important;
+    }
+
+    .btn-outlined {
+        border-color: rgba(212,175,55,0.4) !important;
+        color: var(--gold-dk) !important;
+        font-family: 'Cinzel',serif !important;
+    }
+</style>

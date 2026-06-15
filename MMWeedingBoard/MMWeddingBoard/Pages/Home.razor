@@ -2,6 +2,7 @@
 @inject HttpClient Http
 @using MMWeddingBoard.Shared
 @using MMWeddingBoard.Shared.Dtos
+@inject NavigationManager Navigation
 @implements IDisposable
 
 <SplashScreen OnFinished="OnSplashFinished" />
@@ -20,8 +21,20 @@
                     </MudAvatar>
                 </div>
                 <p class="hero-eyebrow">Sie heiraten</p>
-                <h1 class="hero-title">Manassé <span class="amp">&</span> Myriam</h1>
-                <p class="hero-date">✦ 2026 ✦</p>
+                @if (_wedding != null)
+                {
+                    <h1 class="hero-title">@_wedding.BrideName <span class="amp">&</span> @_wedding.GroomName</h1>
+                    <p class="hero-date">✦ @_wedding.EventDate?.Year ✦</p>
+                    @if (!string.IsNullOrEmpty(_wedding.Location))
+                    {
+                        <p class="hero-location">📍 @_wedding.Location</p>
+                    }
+                }
+                else
+                {
+                    <h1 class="hero-title">M <span class="amp">&</span> M</h1>
+                    <p class="hero-date">✦ WeddingBoard ✦</p>
+                }
             </div>
         </div>
 
@@ -57,7 +70,14 @@
                     <span class="cd-label">Sekunden</span>
                 </div>
             </div>
-            <p class="cd-sub">bis zum schönsten Tag</p>
+            @if (_wedding?.EventDate != null)
+            {
+                <p class="cd-sub">bis zum @_wedding.EventDate.Value.ToString("dd. MMMM yyyy", new System.Globalization.CultureInfo("de-DE"))</p>
+            }
+            else
+            {
+                <p class="cd-sub">bis zum schönsten Tag</p>
+            }
         </div>
 
         <!-- ── STATS ── -->
@@ -74,7 +94,7 @@
                     @_ladeError
                 </MudAlert>
             }
-            else if (_weddings == null)
+            else if (_wedding == null)
             {
                 <div class="d-flex justify-center pa-4">
                     <MudProgressCircular Color="Color.Warning" Indeterminate="true" Size="Size.Small" />
@@ -85,29 +105,29 @@
                 <MudGrid Spacing="2">
                     <MudItem xs="6">
                         <MudPaper Class="stat-card stat-gold" Elevation="1">
-                            <span class="stat-icon">💍</span>
-                            <span class="stat-number">@_weddings.Count</span>
-                            <MudText Typo="Typo.caption" Class="stat-label">Hochzeiten</MudText>
+                            <span class="stat-icon">👥</span>
+                            <span class="stat-number">@_gaesteTotal</span>
+                            <MudText Typo="Typo.caption" Class="stat-label">Gäste Total</MudText>
                         </MudPaper>
                     </MudItem>
                     <MudItem xs="6">
                         <MudPaper Class="stat-card" Elevation="1">
-                            <span class="stat-icon">👥</span>
-                            <span class="stat-number">—</span>
-                            <MudText Typo="Typo.caption" Class="stat-label">Gäste Total</MudText>
+                            <span class="stat-icon">⏳</span>
+                            <span class="stat-number">@_gaesteOffen</span>
+                            <MudText Typo="Typo.caption" Class="stat-label">Ausstehend</MudText>
                         </MudPaper>
                     </MudItem>
                     <MudItem xs="6">
                         <MudPaper Class="stat-card stat-rose" Elevation="1">
                             <span class="stat-icon">✅</span>
-                            <span class="stat-number">—</span>
+                            <span class="stat-number">@_gaesteZugesagt</span>
                             <MudText Typo="Typo.caption" Class="stat-label">Zugesagt</MudText>
                         </MudPaper>
                     </MudItem>
                     <MudItem xs="6">
                         <MudPaper Class="stat-card" Elevation="1">
                             <span class="stat-icon">❌</span>
-                            <span class="stat-number">—</span>
+                            <span class="stat-number">@_gaesteAbgesagt</span>
                             <MudText Typo="Typo.caption" Class="stat-label">Abgesagt</MudText>
                         </MudPaper>
                     </MudItem>
@@ -124,7 +144,7 @@
             </div>
             <MudGrid Spacing="2">
                 <MudItem xs="6">
-                    <MudPaper Class="ql-card" Elevation="1" @onclick='() => Nav("/gaeste")'>
+                    <MudPaper Class="ql-card" Elevation="1" @onclick='() => Nav("/guestPage")'>
                         <span class="ql-icon">👥</span>
                         <span class="ql-title">Gästeliste</span>
                         <span class="ql-desc">Alle Gäste verwalten</span>
@@ -145,7 +165,7 @@
                     </MudPaper>
                 </MudItem>
                 <MudItem xs="6">
-                    <MudPaper Class="ql-card" Elevation="1" @onclick='() => Nav("/einstellungen")'>
+                    <MudPaper Class="ql-card" Elevation="1" @onclick='() => Nav("/settings")'>
                         <span class="ql-icon">⚙️</span>
                         <span class="ql-title">Einstellungen</span>
                         <span class="ql-desc">App konfigurieren</span>
@@ -156,11 +176,21 @@
 
         <!-- ── FOOTER ── -->
         <div class="home-footer">
-            <MudText Typo="Typo.body2" Class="footer-title">
-                M<span class="amp-sm">&</span>M WeddingBoard 💍
-            </MudText>
+            @if (_wedding != null)
+            {
+                <MudText Typo="Typo.body2" Class="footer-title">
+                    @_wedding.BrideName <span class="amp-sm">&</span> @_wedding.GroomName 💍
+                </MudText>
+            }
+            else
+            {
+                <MudText Typo="Typo.body2" Class="footer-title">
+                    M<span class="amp-sm">&</span>M WeddingBoard 💍
+                </MudText>
+            }
+
             <MudText Typo="Typo.caption" Class="footer-sub">
-                Mit Liebe gebaut für Manassé &amp; Myriam
+                Mit Liebe gebaut für euren besonderen Tag
             </MudText>
         </div>
 
@@ -168,17 +198,12 @@
 }
 
 @code {
-    [Inject] private NavigationManager Navigation { get; set; } = default!;
 
     private bool _splashDone = false;
     private bool _pageVisible = false;
-    private IReadOnlyList<WeddingDto>? _weddings;
+    private WeddingDto? _wedding;
     private string? _ladeError;
-
-    // ── Hochzeitsdatum hier anpassen ──
-    private readonly DateTime _weddingDate = new DateTime(2027, 5, 15, 14, 0, 0);
-    // ──────────────────────────────────
-
+    private int _gaesteTotal, _gaesteZugesagt, _gaesteAbgesagt, _gaesteOffen;
     private string _days = "--", _hours = "--", _minutes = "--", _seconds = "--";
     private System.Threading.Timer? _timer;
 
@@ -197,11 +222,29 @@
 
     protected override async Task OnInitializedAsync()
     {
-        UpdateCountdown(null);
-        _timer = new System.Threading.Timer(UpdateCountdown, null, 0, 1000);
         try
         {
-            _weddings = await Http.GetFromJsonAsync<IReadOnlyList<WeddingDto>>("api/weddings");
+            var list = await Http.GetFromJsonAsync<IReadOnlyList<WeddingDto>>("api/weddings");
+            _wedding = list?.FirstOrDefault();
+
+            if (_wedding != null)
+            {
+                // Gäste laden ← das fehlte
+                var gaeste = await Http.GetFromJsonAsync<IReadOnlyList<GuestDto>>(
+                    $"api/weddings/{_wedding.Id}/guests");
+
+                if (gaeste != null)
+                {
+                    _gaesteTotal = gaeste.Count;
+                    _gaesteZugesagt = gaeste.Count(g => g.Status == GuestStatus.Accepted);
+                    _gaesteAbgesagt = gaeste.Count(g => g.Status == GuestStatus.Declined);
+                    _gaesteOffen = gaeste.Count(g => g.Status == GuestStatus.Invited);
+                }
+
+                // Countdown starten
+                UpdateCountdown(null);
+                _timer = new System.Threading.Timer(UpdateCountdown, null, 0, 1000);
+            }
         }
         catch (Exception ex)
         {
@@ -211,7 +254,9 @@
 
     private void UpdateCountdown(object? _)
     {
-        var r = _weddingDate - DateTime.Now;
+        if (_wedding?.EventDate == null) return;
+        var ziel = _wedding.EventDate.Value.ToDateTime(TimeOnly.FromTimeSpan(TimeSpan.FromHours(14)));
+        var r = ziel - DateTime.Now;
         if (r <= TimeSpan.Zero) { _days = _hours = _minutes = _seconds = "00"; }
         else
         {
@@ -228,8 +273,13 @@
 
 
 <style>
-
     @@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&display=swap');
+
+    .hero-location {
+        font-style: italic;
+        font-size: 1.1rem;
+        color: var(--text-lt);
+    }
 
     :root {
         --ivory: #fdf9f2;
@@ -241,179 +291,319 @@
         --text-md: #6b4f2a;
         --text-lt: #9c7a4a;
     }
-    /* Seiten-Hintergrund überschreiben (MudBlazor Standard ist grau) */
+
     .mud-main-content, .mud-layout, body {
         background: var(--ivory) !important;
+        font-size: 18px !important;
     }
 
     .home-page {
         min-height: 100vh;
         background: var(--ivory);
-        opacity: 0; transform: translateY(12px);
+        opacity: 0;
+        transform: translateY(12px);
         transition: opacity 0.7s ease, transform 0.7s ease;
         font-family: 'Cormorant Garamond', serif;
+        font-size: 1.1rem;
     }
-    .home-page.visible { opacity: 1; transform: translateY(0); }
+
+        .home-page.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
     /* ── HERO ── */
     .hero {
-        position: relative; text-align: center; overflow: hidden;
+        position: relative;
+        text-align: center;
+        overflow: hidden;
         background: linear-gradient(175deg, #fdf9f2 0%, #f5ead8 60%, #ede0c4 100%);
         padding: 52px 24px 36px;
         border-bottom: 1px solid rgba(212,175,55,0.2);
     }
+
     .hero-bg {
-        position: absolute; inset: 0; pointer-events: none;
-        background:
-            radial-gradient(circle at 75% 25%, rgba(212,175,55,0.1) 0%, transparent 55%),
-            radial-gradient(circle at 25% 85%, rgba(212,175,55,0.06) 0%, transparent 50%);
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: radial-gradient(circle at 75% 25%, rgba(212,175,55,0.1) 0%, transparent 55%), radial-gradient(circle at 25% 85%, rgba(212,175,55,0.06) 0%, transparent 50%);
     }
+
     .hero-content {
-        position: relative; z-index: 1;
-        display: flex; flex-direction: column; align-items: center; gap: 6px;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
     }
+
     .hero-ring {
-        position: relative; width: 110px; height: 110px; margin-bottom: 8px;
+        position: relative;
+        width: 130px;
+        height: 130px;
+        margin-bottom: 10px;
     }
-    .hero-ring::before {
-        content: ''; position: absolute; inset: -6px; border-radius: 50%;
-        border: 1px solid rgba(212,175,55,0.38);
-    }
+
+        .hero-ring::before {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            border: 1px solid rgba(212,175,55,0.38);
+        }
+
     .hero-eyebrow {
-        font-size: 0.7rem; font-style: italic; letter-spacing: 0.32em;
-        color: var(--gold-dk); text-transform: uppercase;
+        font-size: 1.05rem;
+        font-style: italic;
+        letter-spacing: 0.32em;
+        color: var(--gold-dk);
+        text-transform: uppercase;
     }
+
     .hero-title {
-        font-family: 'Cinzel', serif; font-size: clamp(1.5rem, 5vw, 1.85rem);
-        font-weight: 400; color: var(--text-dk); line-height: 1.2;
+        font-family: 'Cinzel', serif;
+        font-size: clamp(2rem, 6vw, 2.6rem);
+        font-weight: 400;
+        color: var(--text-dk);
+        line-height: 1.2;
     }
-    .hero-title .amp {
-        font-family: 'Cormorant Garamond', serif;
-        font-style: italic; color: var(--gold-dk);
-    }
+
+        .hero-title .amp {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            color: var(--gold-dk);
+        }
+
     .hero-date {
-        font-family: 'Cinzel', serif; font-size: 0.72rem;
-        letter-spacing: 0.42em; color: var(--gold-dk); opacity: 0.75;
+        font-family: 'Cinzel', serif;
+        font-size: 1.05rem;
+        letter-spacing: 0.42em;
+        color: var(--gold-dk);
+        opacity: 0.75;
     }
 
     /* ── COUNTDOWN ── */
     .countdown-wrap {
         background: linear-gradient(135deg, #fdf6e8 0%, #f9eecc 100%);
-        padding: 24px 16px; text-align: center;
+        padding: 28px 16px;
+        text-align: center;
         border-bottom: 1px solid rgba(212,175,55,0.15);
     }
+
     .section-label {
-        font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.45em;
-        color: var(--gold-dk); text-transform: uppercase; margin-bottom: 14px; opacity: 0.8;
+        font-family: 'Cinzel', serif;
+        font-size: 1rem;
+        letter-spacing: 0.45em;
+        color: var(--gold-dk);
+        text-transform: uppercase;
+        margin-bottom: 16px;
+        opacity: 0.8;
     }
+
     .countdown-row {
-        display: flex; align-items: center; justify-content: center; gap: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
     }
-    .cd-item { display: flex; flex-direction: column; align-items: center; }
+
+    .cd-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .cd-box {
         background: white !important;
         border: 1px solid rgba(212,175,55,0.28) !important;
         border-radius: 10px !important;
-        padding: 8px 4px !important;
-        width: 62px; text-align: center;
+        padding: 10px 4px !important;
+        width: 72px;
+        text-align: center;
     }
+
     .cd-num {
-        font-family: 'Cinzel', serif; font-size: 2rem; font-weight: 600; line-height: 1;
+        font-family: 'Cinzel', serif;
+        font-size: 2.6rem;
+        font-weight: 600;
+        line-height: 1;
         background: linear-gradient(135deg, #c9960c, #d4af37);
-        -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
         display: block;
     }
+
     .cd-label {
-        font-size: 0.54rem; letter-spacing: 0.18em;
-        color: var(--gold-dk); text-transform: uppercase; margin-top: 5px; opacity: 0.7;
+        font-size: 0.88rem;
+        letter-spacing: 0.18em;
+        color: var(--gold-dk);
+        text-transform: uppercase;
+        margin-top: 6px;
+        opacity: 0.7;
     }
+
     .cd-sep {
-        font-family: 'Cinzel', serif; font-size: 1.5rem;
-        color: rgba(212,175,55,0.48); margin: 0 1px 16px;
+        font-family: 'Cinzel', serif;
+        font-size: 1.8rem;
+        color: rgba(212,175,55,0.48);
+        margin: 0 2px 18px;
     }
+
     .cd-sub {
-        font-style: italic; font-size: 0.82rem;
-        color: var(--text-lt); margin-top: 12px; letter-spacing: 0.08em;
+        font-style: italic;
+        font-size: 1.1rem;
+        color: var(--text-lt);
+        margin-top: 14px;
+        letter-spacing: 0.08em;
     }
 
     /* ── SECTIONS ── */
-    .section { padding: 24px 16px; }
-    .stats-wrap { background: var(--ivory); }
-    .quicklinks-wrap { background: white; }
+    .section {
+        padding: 24px 16px;
+    }
 
-    .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+    .stats-wrap {
+        background: var(--ivory);
+    }
+
+    .quicklinks-wrap {
+        background: white;
+    }
+
+    .section-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+
     .section-line {
-        flex: 1; height: 1px;
+        flex: 1;
+        height: 1px;
         background: linear-gradient(90deg, transparent, rgba(212,175,55,0.35), transparent);
     }
+
     .section-title {
-        font-family: 'Cinzel', serif !important; font-size: 0.75rem !important;
-        letter-spacing: 0.22em !important; color: var(--text-md) !important;
+        font-family: 'Cinzel', serif !important;
+        font-size: 1.05rem !important;
+        letter-spacing: 0.22em !important;
+        color: var(--text-md) !important;
         white-space: nowrap;
     }
 
     /* ── STAT CARDS ── */
     .stat-card {
-        display: flex; flex-direction: column; align-items: center; gap: 3px;
-        padding: 16px 10px; border-radius: 14px !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        padding: 20px 10px;
+        border-radius: 14px !important;
         border: 1px solid rgba(212,175,55,0.15) !important;
-        background: white !important; cursor: default;
+        background: white !important;
+        cursor: default;
         transition: transform 0.15s;
     }
-    .stat-card:active { transform: scale(0.97); }
-    .stat-card.stat-gold {
-        background: linear-gradient(135deg,#fffbf0,#fdf5dc) !important;
-        border-color: rgba(212,175,55,0.4) !important;
+
+        .stat-card:active {
+            transform: scale(0.97);
+        }
+
+        .stat-card.stat-gold {
+            background: linear-gradient(135deg,#fffbf0,#fdf5dc) !important;
+            border-color: rgba(212,175,55,0.4) !important;
+        }
+
+        .stat-card.stat-rose {
+            background: linear-gradient(135deg,#fff8f8,#fdf0f0) !important;
+            border-color: rgba(200,150,150,0.25) !important;
+        }
+
+    .stat-icon {
+        font-size: 2rem;
     }
-    .stat-card.stat-rose {
-        background: linear-gradient(135deg,#fff8f8,#fdf0f0) !important;
-        border-color: rgba(200,150,150,0.25) !important;
-    }
-    .stat-icon { font-size: 1.3rem; }
+
     .stat-number {
-        font-family: 'Cinzel', serif; font-size: 1.5rem;
-        color: var(--text-dk); font-weight: 600;
+        font-family: 'Cinzel', serif;
+        font-size: 2.1rem;
+        color: var(--text-dk);
+        font-weight: 600;
     }
-    .stat-label { color: var(--text-lt) !important; letter-spacing: 0.08em !important; }
+
+    .stat-label {
+        color: var(--text-lt) !important;
+        letter-spacing: 0.08em !important;
+        font-size: 0.95rem !important;
+    }
 
     /* ── QUICKLINK CARDS ── */
     .ql-card {
-        display: flex; flex-direction: column; align-items: center; gap: 5px;
-        padding: 18px 10px; border-radius: 16px !important;
-        background: #fdf9f2 !important; border: 1px solid rgba(212,175,55,0.18) !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        padding: 22px 10px;
+        border-radius: 16px !important;
+        background: #fdf9f2 !important;
+        border: 1px solid rgba(212,175,55,0.18) !important;
         cursor: pointer;
         transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s, background 0.18s !important;
     }
-    .ql-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 22px rgba(212,175,55,0.14) !important;
-        border-color: rgba(212,175,55,0.45) !important;
-        background: #fffbf0 !important;
+
+        .ql-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(212,175,55,0.14) !important;
+            border-color: rgba(212,175,55,0.45) !important;
+            background: #fffbf0 !important;
+        }
+
+    .ql-icon {
+        font-size: 2.2rem;
     }
-    .ql-icon { font-size: 1.5rem; }
+
     .ql-title {
-        font-family: 'Cinzel', serif; font-size: 0.75rem;
-        color: var(--text-dk); letter-spacing: 0.08em;
+        font-family: 'Cinzel', serif;
+        font-size: 1.05rem;
+        color: var(--text-dk);
+        letter-spacing: 0.08em;
     }
+
     .ql-desc {
-        font-size: 0.62rem; color: var(--text-lt);
-        font-style: italic; text-align: center;
+        font-size: 0.92rem;
+        color: var(--text-lt);
+        font-style: italic;
+        text-align: center;
     }
 
     /* ── FOOTER ── */
     .home-footer {
         background: linear-gradient(135deg, #f5ead8 0%, #ede0c4 100%);
-        text-align: center; padding: 26px 18px;
+        text-align: center;
+        padding: 28px 18px;
         border-top: 1px solid rgba(212,175,55,0.25);
     }
+
     .footer-title {
-        font-family: 'Cinzel', serif !important; letter-spacing: 0.15em !important;
+        font-family: 'Cinzel', serif !important;
+        letter-spacing: 0.15em !important;
         color: #8a6020 !important;
+        font-size: 1.1rem !important;
     }
+
     .footer-sub {
-        font-family: 'Cormorant Garamond', serif !important; font-style: italic !important;
-        color: var(--gold-dk) !important; opacity: 0.65; margin-top: 4px;
+        font-family: 'Cormorant Garamond', serif !important;
+        font-style: italic !important;
+        color: var(--gold-dk) !important;
+        opacity: 0.65;
+        margin-top: 4px;
+        font-size: 1rem !important;
     }
-    .amp-sm { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+
+    .amp-sm {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+    }
 </style>
 

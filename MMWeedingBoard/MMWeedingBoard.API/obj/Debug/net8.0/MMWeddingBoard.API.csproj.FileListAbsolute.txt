@@ -254,9 +254,11 @@ C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeedingBoard.API\bi
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeedingBoard.API\bin\Debug\net8.0\MMWedding.Application.dll
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeedingBoard.API\bin\Debug\net8.0\MMWeddingBoard.Domain.dll
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeedingBoard.API\bin\Debug\net8.0\MMWeddingBoard.Infrastructure.dll
+C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeedingBoard.API\bin\Debug\net8.0\MMWeddingBoard.Shared.dll
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeedingBoard.API\bin\Debug\net8.0\MMWeddingBoard.Infrastructure.pdb
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeedingBoard.API\bin\Debug\net8.0\MMWedding.Application.pdb
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeedingBoard.API\bin\Debug\net8.0\MMWeddingBoard.Domain.pdb
+C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeedingBoard.API\bin\Debug\net8.0\MMWeddingBoard.Shared.pdb
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeedingBoard.API\obj\Debug\net8.0\MMWeddingBoard.API.csproj.AssemblyReference.cache
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeedingBoard.API\obj\Debug\net8.0\MMWeddingBoard.API.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeedingBoard.API\obj\Debug\net8.0\MMWeddingBoard.API.AssemblyInfoInputs.cache
@@ -270,10 +272,10 @@ C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeedingBoard.API\ob
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeedingBoard.API\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeedingBoard.API\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeedingBoard.API\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeedingBoard.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeedingBoard.API\obj\Debug\net8.0\MMWeddin.AC4E4878.Up2Date
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeedingBoard.API\obj\Debug\net8.0\MMWeddingBoard.API.dll
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeedingBoard.API\obj\Debug\net8.0\refint\MMWeddingBoard.API.dll
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeedingBoard.API\obj\Debug\net8.0\MMWeddingBoard.API.pdb
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeedingBoard.API\obj\Debug\net8.0\MMWeddingBoard.API.genruntimeconfig.cache
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeedingBoard.API\obj\Debug\net8.0\ref\MMWeddingBoard.API.dll
+C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeedingBoard.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

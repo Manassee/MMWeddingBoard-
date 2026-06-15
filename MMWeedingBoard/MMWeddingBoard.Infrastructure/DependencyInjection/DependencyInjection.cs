@@ -18,6 +18,7 @@ public static class DependencyInjection
                  configuration.GetConnectionString("DefaultConnection")));
 
         services.AddScoped<IWeddingRepository, WeddingRepository>();
+        services.AddScoped<IGuestRepository, GuestRepository>();
 
         return services;
     }

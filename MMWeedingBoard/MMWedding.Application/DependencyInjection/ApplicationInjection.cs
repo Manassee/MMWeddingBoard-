@@ -17,6 +17,7 @@ namespace MMWedding.Application.DependencyInjection
             // Hier können Sie Ihre Anwendungsdienste registrieren
             // Beispiel: services.AddScoped<IMyService, MyService>();
             services.AddScoped<IWeddingService, WeddingService>();
+            services.AddScoped<IGuestService, GuestService>();
 
             return services;
         }

@@ -9,6 +9,7 @@
       "MMWedding.Application/1.0.0": {
         "dependencies": {
           "MMWeddingBoard.Domain": "1.0.0",
+          "MMWeddingBoard.Shared": "1.0.0",
           "Microsoft.EntityFrameworkCore.Sqlite": "8.0.28",
           "Microsoft.Extensions.Configuration": "8.0.0",
           "Microsoft.Extensions.Configuration.FileExtensions": "8.0.1",
@@ -414,6 +415,17 @@
             "fileVersion": "1.0.0.0"
           }
         }
+      },
+      "MMWeddingBoard.Shared/1.0.0": {
+        "dependencies": {
+          "MMWeddingBoard.Domain": "1.0.0"
+        },
+        "runtime": {
+          "MMWeddingBoard.Shared.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -620,6 +632,11 @@
       "hashPath": "system.memory.4.5.3.nupkg.sha512"
     },
     "MMWeddingBoard.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MMWeddingBoard.Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\mmazu\\source\\repos\\MMWeddingBoard-\\MMWeedingBoard\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C138BAC0-C914-4C47-8942-555BBBD07880}|MMWeddingBoard.Infrastructure\\MMWeddingBoard.Infrastructure.csproj|c:\\users\\mmazu\\source\\repos\\mmweddingboard-\\mmweedingboard\\mmweddingboard.infrastructure\\migrations\\20260610173752_renametitletobridegroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C138BAC0-C914-4C47-8942-555BBBD07880}|MMWeddingBoard.Infrastructure\\MMWeddingBoard.Infrastructure.csproj|solutionrelative:mmweddingboard.infrastructure\\migrations\\20260610173752_renametitletobridegroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6BA91730-D222-F42F-93D5-B3D694E91522}|MMWeddingBoard\\MMWeddingBoard.csproj|c:\\users\\mmazu\\source\\repos\\mmweddingboard-\\mmweedingboard\\mmweddingboard\\pages\\guestpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6BA91730-D222-F42F-93D5-B3D694E91522}|MMWeddingBoard\\MMWeddingBoard.csproj|solutionrelative:mmweddingboard\\pages\\guestpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C138BAC0-C914-4C47-8942-555BBBD07880}|MMWeddingBoard.Infrastructure\\MMWeddingBoard.Infrastructure.csproj|c:\\users\\mmazu\\source\\repos\\mmweddingboard-\\mmweedingboard\\mmweddingboard.infrastructure\\data\\dataseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C138BAC0-C914-4C47-8942-555BBBD07880}|MMWeddingBoard.Infrastructure\\MMWeddingBoard.Infrastructure.csproj|solutionrelative:mmweddingboard.infrastructure\\data\\dataseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6BA91730-D222-F42F-93D5-B3D694E91522}|MMWeddingBoard\\MMWeddingBoard.csproj|c:\\users\\mmazu\\source\\repos\\mmweddingboard-\\mmweedingboard\\mmweddingboard\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6BA91730-D222-F42F-93D5-B3D694E91522}|MMWeddingBoard\\MMWeddingBoard.csproj|solutionrelative:mmweddingboard\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -83,27 +83,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "20260610173752_RenameTitleToBrideGroom.cs",
-              "DocumentMoniker": "C:\\Users\\mmazu\\source\\repos\\MMWeddingBoard-\\MMWeedingBoard\\MMWeddingBoard.Infrastructure\\Migrations\\20260610173752_RenameTitleToBrideGroom.cs",
-              "RelativeDocumentMoniker": "MMWeddingBoard.Infrastructure\\Migrations\\20260610173752_RenameTitleToBrideGroom.cs",
-              "ToolTip": "C:\\Users\\mmazu\\source\\repos\\MMWeddingBoard-\\MMWeedingBoard\\MMWeddingBoard.Infrastructure\\Migrations\\20260610173752_RenameTitleToBrideGroom.cs",
-              "RelativeToolTip": "MMWeddingBoard.Infrastructure\\Migrations\\20260610173752_RenameTitleToBrideGroom.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-10T17:37:53.033Z",
+              "Title": "GuestPage.razor",
+              "DocumentMoniker": "C:\\Users\\mmazu\\Source\\Repos\\MMWeddingBoard-\\MMWeedingBoard\\MMWeddingBoard\\Pages\\GuestPage.razor",
+              "RelativeDocumentMoniker": "MMWeddingBoard\\Pages\\GuestPage.razor",
+              "ToolTip": "C:\\Users\\mmazu\\Source\\Repos\\MMWeddingBoard-\\MMWeedingBoard\\MMWeddingBoard\\Pages\\GuestPage.razor",
+              "RelativeToolTip": "MMWeddingBoard\\Pages\\GuestPage.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-15T19:32:33.234Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DataSeeder.cs",
-              "DocumentMoniker": "C:\\Users\\mmazu\\source\\repos\\MMWeddingBoard-\\MMWeedingBoard\\MMWeddingBoard.Infrastructure\\Data\\DataSeeder.cs",
-              "RelativeDocumentMoniker": "MMWeddingBoard.Infrastructure\\Data\\DataSeeder.cs",
-              "ToolTip": "C:\\Users\\mmazu\\source\\repos\\MMWeddingBoard-\\MMWeedingBoard\\MMWeddingBoard.Infrastructure\\Data\\DataSeeder.cs",
-              "RelativeToolTip": "MMWeddingBoard.Infrastructure\\Data\\DataSeeder.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAwwBsAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-10T17:23:29.165Z",
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\mmazu\\source\\repos\\MMWeddingBoard-\\MMWeedingBoard\\MMWeddingBoard\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "MMWeddingBoard\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\mmazu\\source\\repos\\MMWeddingBoard-\\MMWeedingBoard\\MMWeddingBoard\\Pages\\Home.razor",
+              "RelativeToolTip": "MMWeddingBoard\\Pages\\Home.razor",
+              "ViewState": "AgIAAD8CAAAAAAAAAAAAwGECAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-15T19:16:51.179Z",
               "EditorCaption": ""
             }
           ]

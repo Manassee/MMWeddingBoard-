@@ -1,0 +1,139 @@
+﻿@page "/setup"
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@using MMWeddingBoard.Shared.Dtos
+
+<div class="setup-page">
+    <div class="setup-card">
+
+        <div class="setup-logo">
+            <img src="images/196.png" alt="M&M" />
+        </div>
+
+        <h1 class="setup-title">Willkommen</h1>
+        <p class="setup-sub">Richte deine Hochzeit ein</p>
+
+        <div class="setup-steps">
+            <div class="step @(_schritt >= 1 ? "active" : "") @(_schritt > 1 ? "done" : "")">1</div>
+            <div class="step-line @(_schritt > 1 ? "done" : "")"></div>
+            <div class="step @(_schritt >= 2 ? "active" : "") @(_schritt > 2 ? "done" : "")">2</div>
+            <div class="step-line @(_schritt > 2 ? "done" : "")"></div>
+            <div class="step @(_schritt >= 3 ? "active" : "")">3</div>
+        </div>
+
+        @if (_schritt == 1)
+        {
+            <div class="setup-content">
+                <h2 class="step-title">💍 Die Brautleute</h2>
+                <p class="step-desc">Wie heißen Braut und Bräutigam?</p>
+                <MudTextField @bind-Value="_request.BrideName"
+                              Label="Name der Braut"
+                              Placeholder="z.B. Myriam"
+                              Variant="Variant.Outlined"
+                              Adornment="Adornment.Start"
+                              AdornmentText="👰" />
+                <MudTextField @bind-Value="_request.GroomName"
+                              Label="Name des Bräutigams"
+                              Placeholder="z.B. Manassé"
+                              Variant="Variant.Outlined"
+                              Adornment="Adornment.Start"
+                              AdornmentText="🤵" />
+            </div>
+        }
+        else if (_schritt == 2)
+        {
+            <div class="setup-content">
+                <h2 class="step-title">📅 Datum & Ort</h2>
+                <p class="step-desc">Wann und wo findet die Hochzeit statt?</p>
+                <MudDatePicker @bind-Date="_eventDate"
+                               Label="Hochzeitsdatum"
+                               Variant="Variant.Outlined"
+                               DateFormat="dd.MM.yyyy"
+                               MinDate="DateTime.Today" />
+                <MudTextField @bind-Value="_request.Location"
+                              Label="Ort (optional)"
+                              Placeholder="z.B. Köln, Deutschland"
+                              Variant="Variant.Outlined"
+                              Adornment="Adornment.Start"
+                              AdornmentText="📍" />
+            </div>
+        }
+        else if (_schritt == 3)
+        {
+            <div class="setup-content">
+                <h2 class="step-title">✨ Zusammenfassung</h2>
+                <p class="step-desc">Alles korrekt?</p>
+                <div class="summary-card">
+                    <div class="summary-row">
+                        <span>👰</span><span>@_request.BrideName</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>🤵</span><span>@_request.GroomName</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>📅</span><span>@_eventDate?.ToString("dd.MM.yyyy")</span>
+                    </div>
+                    @if (!string.IsNullOrEmpty(_request.Location))
+                    {
+                        <div class="summary-row">
+                            <span>📍</span><span>@_request.Location</span>
+                        </div>
+                    }
+                </div>
+                @if (_fehler != null)
+                {
+                    <MudAlert Severity="Severity.Error" Variant="Variant.Outlined">@_fehler</MudAlert>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+
+@code {
+    private int _schritt = 1;
+    private bool _laedt = false;
+    private string? _fehler;
+    private CreateWeddingRequest _request = new();
+    private DateTime? _eventDate = null;
+
+    private bool SchrittGueltig() => _schritt switch
+    {
+        1 => !string.IsNullOrWhiteSpace(_request.BrideName) &&
+             !string.IsNullOrWhiteSpace(_request.GroomName),
+        2 => _eventDate.HasValue,
+        _ => true
+    };
+
+    private void Weiter()
+    {
+        if (!SchrittGueltig()) return;
+        if (_schritt == 2 && _eventDate.HasValue)
+            _request.EventDate = DateOnly.FromDateTime(_eventDate.Value);
+        _schritt++;
+    }
+
+    private void Zurueck() => _schritt--;
+
+    private async Task Speichern()
+    {
+        _laedt = true;
+        _fehler = null;
+        try
+        {
+            var response = await Http.PostAsJsonAsync("api/weddings", _request);
+            if (response.IsSuccessStatusCode)
+                Navigation.NavigateTo("/", forceLoad: true);
+            else
+                _fehler = "Fehler beim Speichern. Bitte versuche es erneut.";
+        }
+        catch (Exception ex)
+        {
+            _fehler = $"Verbindungsfehler: {ex.Message}";
+        }
+        finally
+        {
+            _laedt = false;
+        }
+    }
+}

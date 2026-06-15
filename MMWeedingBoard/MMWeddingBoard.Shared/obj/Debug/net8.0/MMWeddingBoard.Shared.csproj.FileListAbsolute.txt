@@ -13,11 +13,15 @@ C:\Users\manav\source\Weeding\MMWeedingBoard\MMWeddingBoard.Shared\obj\Debug\net
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeddingBoard.Shared\bin\Debug\net8.0\MMWeddingBoard.Shared.deps.json
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeddingBoard.Shared\bin\Debug\net8.0\MMWeddingBoard.Shared.dll
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeddingBoard.Shared\bin\Debug\net8.0\MMWeddingBoard.Shared.pdb
+C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeddingBoard.Shared\bin\Debug\net8.0\MMWeddingBoard.Domain.dll
+C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeddingBoard.Shared\bin\Debug\net8.0\MMWeddingBoard.Domain.pdb
+C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeddingBoard.Shared\obj\Debug\net8.0\MMWeddingBoard.Shared.csproj.AssemblyReference.cache
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeddingBoard.Shared\obj\Debug\net8.0\MMWeddingBoard.Shared.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeddingBoard.Shared\obj\Debug\net8.0\MMWeddingBoard.Shared.AssemblyInfoInputs.cache
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeddingBoard.Shared\obj\Debug\net8.0\MMWeddingBoard.Shared.AssemblyInfo.cs
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeddingBoard.Shared\obj\Debug\net8.0\MMWeddingBoard.Shared.csproj.CoreCompileInputs.cache
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeddingBoard.Shared\obj\Debug\net8.0\MMWeddingBoard.Shared.sourcelink.json
+C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeddingBoard.Shared\obj\Debug\net8.0\MMWeddin.D103A91B.Up2Date
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeddingBoard.Shared\obj\Debug\net8.0\MMWeddingBoard.Shared.dll
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeddingBoard.Shared\obj\Debug\net8.0\refint\MMWeddingBoard.Shared.dll
 C:\Users\mmazu\Source\Repos\MMWeddingBoard-\MMWeedingBoard\MMWeddingBoard.Shared\obj\Debug\net8.0\MMWeddingBoard.Shared.pdb

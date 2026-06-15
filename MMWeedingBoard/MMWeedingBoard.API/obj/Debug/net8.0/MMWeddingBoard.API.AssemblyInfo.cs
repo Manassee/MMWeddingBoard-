@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MMWeddingBoard.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+546ff15d6d1bc4b78c0b33d0bb4cfc5260e7595d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+93f349f8a424901eab19455feed5089cdfce986c")]
 [assembly: System.Reflection.AssemblyProductAttribute("MMWeddingBoard.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MMWeddingBoard.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
