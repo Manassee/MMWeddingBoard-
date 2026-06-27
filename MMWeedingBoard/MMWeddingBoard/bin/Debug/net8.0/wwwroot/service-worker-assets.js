@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "tDCscV6E",
+  "version": "AhlQk2Lr",
   "assets": [
     {
       "hash": "sha256-zyLDdtfqDu5i6H8WX59l49N2qLO6l9qf1lIcEXVd/qw=",
@@ -14,19 +14,27 @@ self.assetsManifest = {
       "url": "_content/MudBlazor/MudBlazor.min.js.map"
     },
     {
-      "hash": "sha256-7k8NV4Toy/bkea2K9slOFNC5czqJdBAVyg/59JBKANo=",
+      "hash": "sha256-77GfVCbtlLEpAbE0a0483sj65VKrkpbW1tcLpOjrSOE=",
+      "url": "_framework/MMWeddingBoard.Domain.pdb"
+    },
+    {
+      "hash": "sha256-UXeS9hygaLsEfxX0iAlnMvkzJM+Yf5lH7GsL401Pp6k=",
+      "url": "_framework/MMWeddingBoard.Domain.wasm"
+    },
+    {
+      "hash": "sha256-LHMsTlU3+1PdQ4KyoGpzBzzqkhL33DJtB7rXOHMF3mw=",
       "url": "_framework/MMWeddingBoard.Shared.pdb"
     },
     {
-      "hash": "sha256-2/thHvxiy6Nf589TlqqfEBn2RQq/1AvCLTPS1tcfjC8=",
+      "hash": "sha256-gP+yZFJoLtAQ57lukWFXSKg4DT0V7Mc6f1piLAQlqzE=",
       "url": "_framework/MMWeddingBoard.Shared.wasm"
     },
     {
-      "hash": "sha256-4nV6xxtAXKjdEMG4jkJoI5bfIE9LW4YgFVbv+tIV32g=",
+      "hash": "sha256-HQn62uYGmdTexa/+m/zj/8w47QA58QdnWpUa/TaDX3Q=",
       "url": "_framework/MMWeddingBoard.pdb"
     },
     {
-      "hash": "sha256-hJHWivu0TtOXmaQX63Jg0bbHA6xKAmLrD5fRYUfqBcQ=",
+      "hash": "sha256-Q9WbUmk3O59ptzLUIUgcd8Hj8Gg/C+lZV8Itb7PdtGA=",
       "url": "_framework/MMWeddingBoard.wasm"
     },
     {
@@ -58,6 +66,34 @@ self.assetsManifest = {
       "url": "_framework/Microsoft.CSharp.wasm"
     },
     {
+      "hash": "sha256-BgXgA4pjFalApyksF/CZpuEf0dLV2E7GIcRz7+nHCcY=",
+      "url": "_framework/Microsoft.Data.Sqlite.wasm"
+    },
+    {
+      "hash": "sha256-MQvTSkTOQYwRTwcZxCYRcmAPUR+r2vmrcEypyKXYbGg=",
+      "url": "_framework/Microsoft.EntityFrameworkCore.Abstractions.wasm"
+    },
+    {
+      "hash": "sha256-xAsOGX51PluwpmA16wVYo+o047hG6DK/i7rfDok0jYc=",
+      "url": "_framework/Microsoft.EntityFrameworkCore.Relational.wasm"
+    },
+    {
+      "hash": "sha256-zoYGtiTppklvwdaP15puGeAm7/MWCF5x4HII0/R+H1M=",
+      "url": "_framework/Microsoft.EntityFrameworkCore.Sqlite.wasm"
+    },
+    {
+      "hash": "sha256-SUKoysAKjLEXR1F+XlvR+ttoCApxHG7b5V+ZSofIKHo=",
+      "url": "_framework/Microsoft.EntityFrameworkCore.wasm"
+    },
+    {
+      "hash": "sha256-ygxx8pKlN4YllvAX2HADU+dKWSOZRMNfSP4nHkPMH+8=",
+      "url": "_framework/Microsoft.Extensions.Caching.Abstractions.wasm"
+    },
+    {
+      "hash": "sha256-BiuYQmEQD4IoGofbzRbJdxGd8JmaZxAMTfs8kXli8EA=",
+      "url": "_framework/Microsoft.Extensions.Caching.Memory.wasm"
+    },
+    {
       "hash": "sha256-yNdqbqDWGiJo943D7LPak5xryCBEsNH0wtdiuU1R9VE=",
       "url": "_framework/Microsoft.Extensions.Configuration.Abstractions.wasm"
     },
@@ -84,6 +120,10 @@ self.assetsManifest = {
     {
       "hash": "sha256-CS+QrPLaogl32aUg+ES1Ef5QGKoMyjt3V+wGoiG+tpw=",
       "url": "_framework/Microsoft.Extensions.DependencyInjection.wasm"
+    },
+    {
+      "hash": "sha256-cz5ObU0k1qn+jyFk4Zwh7rwzOiedo/cKpuk2uaPobnk=",
+      "url": "_framework/Microsoft.Extensions.DependencyModel.wasm"
     },
     {
       "hash": "sha256-IUopixuV8E09mP+TIgRp/lXEbeacXbUTW7cu0v5B9Tc=",
@@ -148,6 +188,18 @@ self.assetsManifest = {
     {
       "hash": "sha256-thkP+XRkuCjxNi/B5BDXRUc+ilFWSclx5Vdj4KHH3kM=",
       "url": "_framework/MudBlazor.wasm"
+    },
+    {
+      "hash": "sha256-AymqXfJmredfnqn6PxQs3nqqNoMXiBDEqaT3b0605F8=",
+      "url": "_framework/SQLitePCLRaw.batteries_v2.wasm"
+    },
+    {
+      "hash": "sha256-5ncp/PNVntosOHmUwpvRVJZvvreYP08nlkqD9XgBkdA=",
+      "url": "_framework/SQLitePCLRaw.core.wasm"
+    },
+    {
+      "hash": "sha256-3TKRNpWG681LxI/l31HI8LuIjsCjG6XJ9dIEXu3m1zY=",
+      "url": "_framework/SQLitePCLRaw.provider.e_sqlite3.wasm"
     },
     {
       "hash": "sha256-YKWR4jo8c2tltilYPzj5Ju0fxwDp/iyc+t3HJfhc+Rg=",
@@ -798,7 +850,7 @@ self.assetsManifest = {
       "url": "_framework/WindowsBase.wasm"
     },
     {
-      "hash": "sha256-aPVuh1swnPLv1Fzyc96vpqTew9JX+vgpT6DmCUuTm9Y=",
+      "hash": "sha256-HvRj8jmndVkY2DEDDXwnh4TkT72rsEYumi0w61EkYbw=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -828,6 +880,10 @@ self.assetsManifest = {
     {
       "hash": "sha256-mPaVoMrFT7LKlpBBOjNFN+v9ibFV17y5BkrpFD162cw=",
       "url": "_framework/dotnet.runtime.js.map"
+    },
+    {
+      "hash": "sha256-Ab5zUdDSc9FRa92WvWBFPRaFubsXeuPji0yOl61bNjk=",
+      "url": "_framework/e_sqlite3.a"
     },
     {
       "hash": "sha256-EDndcUl06UUgbB5x0DTQqfgwLv4TZo64Ka6aUqdbGTs=",

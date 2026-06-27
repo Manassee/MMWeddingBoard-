@@ -571,6 +571,19 @@
         "runtime": {
           "bin/placeholder/MMWeddingBoard.Domain.dll": {}
         }
+      },
+      "MMWeddingBoard.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "MMWeddingBoard.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MMWeddingBoard.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MMWeddingBoard.Shared.dll": {}
+        }
       }
     }
   },
@@ -1344,11 +1357,17 @@
       "type": "project",
       "path": "../MMWeddingBoard.Domain/MMWeddingBoard.Domain.csproj",
       "msbuildProject": "../MMWeddingBoard.Domain/MMWeddingBoard.Domain.csproj"
+    },
+    "MMWeddingBoard.Shared/1.0.0": {
+      "type": "project",
+      "path": "../MMWeddingBoard.Shared/MMWeddingBoard.Shared.csproj",
+      "msbuildProject": "../MMWeddingBoard.Shared/MMWeddingBoard.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "MMWeddingBoard.Domain >= 1.0.0",
+      "MMWeddingBoard.Shared >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Sqlite >= 8.0.28",
       "Microsoft.Extensions.Configuration >= 8.0.0",
       "Microsoft.Extensions.Configuration.FileExtensions >= 8.0.1",
@@ -1391,6 +1410,9 @@
           "projectReferences": {
             "C:\\Users\\mmazu\\Source\\Repos\\MMWeddingBoard-\\MMWeedingBoard\\MMWeddingBoard.Domain\\MMWeddingBoard.Domain.csproj": {
               "projectPath": "C:\\Users\\mmazu\\Source\\Repos\\MMWeddingBoard-\\MMWeedingBoard\\MMWeddingBoard.Domain\\MMWeddingBoard.Domain.csproj"
+            },
+            "C:\\Users\\mmazu\\Source\\Repos\\MMWeddingBoard-\\MMWeedingBoard\\MMWeddingBoard.Shared\\MMWeddingBoard.Shared.csproj": {
+              "projectPath": "C:\\Users\\mmazu\\Source\\Repos\\MMWeddingBoard-\\MMWeedingBoard\\MMWeddingBoard.Shared\\MMWeddingBoard.Shared.csproj"
             }
           }
         }

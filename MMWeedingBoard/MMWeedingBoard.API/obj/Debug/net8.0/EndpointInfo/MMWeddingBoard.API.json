@@ -178,7 +178,11 @@
       "CreateWeddingRequest": {
         "type": "object",
         "properties": {
-          "title": {
+          "brideName": {
+            "type": "string",
+            "nullable": true
+          },
+          "groomName": {
             "type": "string",
             "nullable": true
           },
@@ -196,7 +200,11 @@
       "UpdateWeddingRequest": {
         "type": "object",
         "properties": {
-          "title": {
+          "brideName": {
+            "type": "string",
+            "nullable": true
+          },
+          "groomName": {
             "type": "string",
             "nullable": true
           },
@@ -218,7 +226,11 @@
             "type": "string",
             "format": "uuid"
           },
-          "title": {
+          "brideName": {
+            "type": "string",
+            "nullable": true
+          },
+          "groomName": {
             "type": "string",
             "nullable": true
           },

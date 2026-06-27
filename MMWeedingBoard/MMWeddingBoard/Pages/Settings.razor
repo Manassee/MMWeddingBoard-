@@ -1,0 +1,392 @@
+﻿@page "/settings"
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@using MMWeddingBoard.Shared.Dtos
+
+
+<div class="settings-page">
+
+    <!-- ── HEADER ── -->
+    <div class="settings-header">
+        <MudIconButton Icon="@Icons.Material.Filled.ArrowBack"
+                       OnClick='() => Navigation.NavigateTo("/")'
+                       Class="back-btn" />
+        <div>
+            <h1 class="settings-title">Einstellungen</h1>
+            <p class="settings-sub">App konfigurieren</p>
+        </div>
+    </div>
+
+    @if (_ladeError != null)
+    {
+        <MudAlert Severity="Severity.Error" Class="mx-3 mb-3">@_ladeError</MudAlert>
+    }
+
+    <!-- ── HOCHZEIT BEARBEITEN ── -->
+    <div class="settings-section">
+        <div class="section-header">
+            <div class="section-line"></div>
+            <span class="section-title">💍 Hochzeit</span>
+            <div class="section-line"></div>
+        </div>
+
+        @if (_form == null)
+        {
+            <div class="d-flex justify-center pa-4">
+                <MudProgressCircular Color="Color.Warning" Indeterminate="true" Size="Size.Small" />
+            </div>
+        }
+        else
+        {
+            <MudPaper Class="settings-card" Elevation="1">
+                <MudTextField @bind-Value="_form.BrideName"
+                              Label="Name der Braut"
+                              Variant="Variant.Outlined"
+                              Adornment="Adornment.Start"
+                              AdornmentText="👰"
+                              Class="mb-3"
+                              OnBlur="SaveWedding" />
+
+                <MudTextField @bind-Value="_form.GroomName"
+                              Label="Name des Bräutigams"
+                              Variant="Variant.Outlined"
+                              Adornment="Adornment.Start"
+                              AdornmentText="🤵"
+                              Class="mb-3"
+                              OnBlur="SaveWedding" />
+
+                <MudDatePicker @bind-Date="_eventDate"
+                               Label="Hochzeitsdatum"
+                               Variant="Variant.Outlined"
+                               DateFormat="dd.MM.yyyy"
+                               Class="mb-3"
+                               />
+
+                <MudTextField @bind-Value="_form.Location"
+                              Label="Ort"
+                              Placeholder="z.B. Köln, Deutschland"
+                              Variant="Variant.Outlined"
+                              Adornment="Adornment.Start"
+                              AdornmentText="📍"
+                              OnBlur="SaveWedding" />
+
+                @if (_gespeichert)
+                {
+                    <MudAlert Severity="Severity.Success" Variant="Variant.Outlined" Class="mt-3" Dense="true">
+                        ✅ Gespeichert
+                    </MudAlert>
+                }
+                @if (_speicherFehler != null)
+                {
+                    <MudAlert Severity="Severity.Error" Variant="Variant.Outlined" Class="mt-3" Dense="true">
+                        @_speicherFehler
+                    </MudAlert>
+                }
+            </MudPaper>
+        }
+    </div>
+
+    <!-- ── BILD / LOGO ── -->
+    <div class="settings-section">
+        <div class="section-header">
+            <div class="section-line"></div>
+            <span class="section-title">🖼️ Bild & Logo</span>
+            <div class="section-line"></div>
+        </div>
+        <MudPaper Class="settings-card" Elevation="1">
+            <div class="logo-preview">
+                <img src="images/512.png" alt="Logo" class="logo-img" />
+            </div>
+            <MudText Typo="Typo.caption" Class="logo-hint">
+                Platziere dein Bild unter <strong>wwwroot/images/512.png</strong> und starte die App neu.
+            </MudText>
+        </MudPaper>
+    </div>
+
+    <!-- ── SPRACHE ── -->
+    <div class="settings-section">
+        <div class="section-header">
+            <div class="section-line"></div>
+            <span class="section-title">🌍 Sprache</span>
+            <div class="section-line"></div>
+        </div>
+        <MudPaper Class="settings-card" Elevation="1">
+            <div class="lang-row">
+                <MudButton Class="@LangClass("de")" OnClick='() => SetSprache("de")'>
+                    🇩🇪 Deutsch
+                </MudButton>
+                <MudButton Class="@LangClass("fr")" OnClick='() => SetSprache("fr")'>
+                    🇫🇷 Français
+                </MudButton>
+                <MudButton Class="@LangClass("en")" OnClick='() => SetSprache("en")'>
+                    🇬🇧 English
+                </MudButton>
+            </div>
+            <MudText Typo="Typo.caption" Class="lang-hint">
+                Aktuelle Sprache: <strong>@SpracheName(_sprache)</strong>
+            </MudText>
+        </MudPaper>
+    </div>
+
+    <!-- ── HOCHZEITEN VERWALTEN ── -->
+    <div class="settings-section">
+        <div class="section-header">
+            <div class="section-line"></div>
+            <span class="section-title">📋 Hochzeiten verwalten</span>
+            <div class="section-line"></div>
+        </div>
+        <MudPaper Class="settings-card" Elevation="1">
+
+            @if (_alleHochzeiten == null)
+            {
+                <MudProgressCircular Color="Color.Warning" Indeterminate="true" Size="Size.Small" />
+            }
+            else
+            {
+                @foreach (var w in _alleHochzeiten)
+                {
+                    <div class="wedding-row">
+                        <div class="wedding-info">
+                            <span class="wedding-name">@w.BrideName & @w.GroomName</span>
+                            <span class="wedding-date">@w.EventDate?.ToString("dd.MM.yyyy")</span>
+                        </div>
+                        <MudIconButton Icon="@Icons.Material.Filled.Delete"
+                                       Color="Color.Error"
+                                       Size="Size.Small"
+                                       OnClick="() => HochzeitLoeschenBestaetigen(w)" />
+                    </div>
+                }
+            }
+
+            <MudDivider Class="my-3" />
+            <MudButton Variant="Variant.Outlined"
+                       Class="btn-add"
+                       OnClick='() => Navigation.NavigateTo("/setup")'>
+                + Neue Hochzeit anlegen
+            </MudButton>
+        </MudPaper>
+    </div>
+
+
+<!-- ── RESET ── -->
+    <div class="settings-section">
+        <div class="section-header">
+            <div class="section-line"></div>
+            <span class="section-title">⚠️ Zurücksetzen</span>
+            <div class="section-line"></div>
+        </div>
+        <MudPaper Class="settings-card settings-danger" Elevation="1">
+            <MudText Typo="Typo.body2" Class="danger-text">
+                Alle Daten und Einstellungen werden unwiderruflich gelöscht.
+            </MudText>
+            <MudButton Variant="Variant.Filled"
+                       Class="btn-danger"
+                       OnClick="ResetBestaetigen">
+                🗑️ App zurücksetzen
+            </MudButton>
+        </MudPaper>
+    </div>
+
+</div>
+
+<!-- ── DIALOG: Hochzeit löschen ── -->
+<MudDialog @bind-Visible="_loeschDialog">
+    <TitleContent>Hochzeit löschen</TitleContent>
+    <DialogContent>
+        <MudText>
+            Möchtest du die Hochzeit von
+            <strong>@_zuLoeschen?.BrideName & @_zuLoeschen?.GroomName</strong>
+            wirklich löschen?
+        </MudText>
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="() => _loeschDialog = false">Abbrechen</MudButton>
+        <MudButton Color="Color.Error" Variant="Variant.Filled" OnClick="HochzeitLoeschen">
+            Löschen
+        </MudButton>
+    </DialogActions>
+</MudDialog>
+
+
+<!-- ── DIALOG: Reset ── -->
+<MudDialog @bind-Visible="_resetDialog">
+    <TitleContent>⚠️ App zurücksetzen</TitleContent>
+    <DialogContent>
+        <MudText>
+            Alle Hochzeiten, Gäste und Einstellungen werden gelöscht.
+            Diese Aktion kann nicht rückgängig gemacht werden!
+        </MudText>
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="() => _resetDialog = false">Abbrechen</MudButton>
+        <MudButton Color="Color.Error" Variant="Variant.Filled" OnClick="ResetDurchfuehren">
+            Ja, alles löschen
+        </MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+
+    private UpdateWeddingRequest _form = new();
+    private Guid _weddingId;
+    private IReadOnlyList<WeddingDto>? _alleHochzeiten;
+    private DateTime? _eventDate;
+    private string? _ladeError;
+    private string? _speicherFehler;
+    private bool _gespeichert = false;
+    private string _sprache = "de";
+
+    private bool _loeschDialog = false;
+    private bool _resetDialog = false;
+    private WeddingDto? _zuLoeschen;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var first = _alleHochzeiten?.FirstOrDefault();
+        if (first != null)
+        {
+            _weddingId = first.Id;
+            _form.BrideName = first.BrideName;
+            _form.GroomName = first.GroomName;
+            _form.Location = first.Location;
+            _form.EventDate = first.EventDate ?? DateOnly.FromDateTime(DateTime.Today);
+
+            if (first.EventDate.HasValue)
+                _eventDate = first.EventDate.Value.ToDateTime(TimeOnly.MinValue);
+        }
+    }
+
+    
+
+    private async Task SaveWedding()
+    {
+        _gespeichert = false;
+        _speicherFehler = null;
+        try
+        {
+            _form.EventDate = _eventDate.HasValue
+                ? DateOnly.FromDateTime(_eventDate.Value)
+                : DateOnly.FromDateTime(DateTime.Today);
+
+            var response = await Http.PutAsJsonAsync($"api/weddings/{_weddingId}", _form);
+            if (response.IsSuccessStatusCode)
+            {
+                _gespeichert = true;
+                await Task.Delay(2500);
+                _gespeichert = false;
+                StateHasChanged();
+            }
+            else
+            {
+                _speicherFehler = "Fehler beim Speichern.";
+            }
+        }
+        catch (Exception ex)
+        {
+            _speicherFehler = $"Verbindungsfehler: {ex.Message}";
+        }
+    }
+
+    private void SetSprache(string code)
+    {
+        _sprache = code;
+        // TODO: Blazor Localization integrieren
+    }
+
+    private string SpracheName(string code) => code switch
+    {
+        "de" => "Deutsch",
+        "fr" => "Français",
+        "en" => "English",
+        _ => "Deutsch"
+    };
+
+    private string LangClass(string code) =>
+        _sprache == code ? "lang-btn lang-active" : "lang-btn";
+
+    private void HochzeitLoeschenBestaetigen(WeddingDto w)
+    {
+        _zuLoeschen = w;
+        _loeschDialog = true;
+    }
+
+    private async Task HochzeitLoeschen()
+    {
+        if (_zuLoeschen == null) return;
+        try
+        {
+            await Http.DeleteAsync($"api/weddings/{_zuLoeschen.Id}");
+            _alleHochzeiten = await Http.GetFromJsonAsync<IReadOnlyList<WeddingDto>>("api/weddings");
+            if (_alleHochzeiten == null || _alleHochzeiten.Count == 0)
+                Navigation.NavigateTo("/setup", forceLoad: true);
+        }
+        catch { }
+        finally
+        {
+            _loeschDialog = false;
+            _zuLoeschen = null;
+        }
+    }
+
+    private void ResetBestaetigen() => _resetDialog = true;
+
+    private async Task ResetDurchfuehren()
+    {
+        try
+        {
+            // Alle Hochzeiten löschen
+            if (_alleHochzeiten != null)
+                foreach (var w in _alleHochzeiten)
+                    await Http.DeleteAsync($"api/weddings/{w.Id}");
+
+            Navigation.NavigateTo("/setup", forceLoad: true);
+        }
+        catch { }
+        finally
+        {
+            _resetDialog = false;
+        }
+    }
+
+
+    
+}
+
+<style>
+    @@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
+
+    :root { --ivory:#fdf9f2; --gold:#d4af37; --gold-dk:#b8891a; --text-dk:#3d2b0e; --text-lt:#9c7a4a; }
+
+    .settings-page { min-height:100vh; background:var(--ivory); padding-bottom:40px; font-family:'Cormorant Garamond',serif; }
+
+    .settings-header { display:flex; align-items:center; gap:12px; padding:20px 16px 8px; background:linear-gradient(175deg,#fdf9f2,#f5ead8); border-bottom:1px solid rgba(212,175,55,0.2); }
+    .back-btn { color: var(--gold-dk) !important; }
+    .settings-title { font-family:'Cinzel',serif; font-size:1.3rem; font-weight:400; color:var(--text-dk); margin:0; }
+    .settings-sub { font-style:italic; font-size:0.8rem; color:var(--text-lt); margin:0; }
+
+    .settings-section { padding:20px 16px 0; }
+    .section-header { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+    .section-line { flex:1; height:1px; background:linear-gradient(90deg,transparent,rgba(212,175,55,0.35),transparent); }
+    .section-title { font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.15em; color:var(--text-lt); white-space:nowrap; }
+
+    .settings-card { padding:18px; border-radius:16px !important; border:1px solid rgba(212,175,55,0.18) !important; background:white !important; }
+
+    .logo-preview { display:flex; justify-content:center; margin-bottom:12px; }
+    .logo-img { width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid rgba(212,175,55,0.4); }
+    .logo-hint { color:var(--text-lt); font-style:italic; text-align:center; display:block; }
+
+    .lang-row { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+    .lang-btn { font-family:'Cinzel',serif !important; font-size:0.72rem !important; border:1px solid rgba(212,175,55,0.3) !important; color:var(--text-lt) !important; border-radius:20px !important; }
+    .lang-btn.lang-active { background:linear-gradient(135deg,#d4af37,#b8891a) !important; color:white !important; border-color:transparent !important; }
+    .lang-hint { color:var(--text-lt); font-style:italic; }
+
+    .wedding-row { display:flex; align-items:center; justify-content:space-between; padding:10px 0; border-bottom:1px solid rgba(212,175,55,0.12); }
+    .wedding-info { display:flex; flex-direction:column; }
+    .wedding-name { font-family:'Cinzel',serif; font-size:0.85rem; color:var(--text-dk); }
+    .wedding-date { font-size:0.75rem; font-style:italic; color:var(--text-lt); }
+    .btn-add { border-color:rgba(212,175,55,0.4) !important; color:var(--gold-dk) !important; font-family:'Cinzel',serif !important; font-size:0.72rem !important; width:100%; margin-top:4px; }
+
+    .settings-danger { border-color:rgba(200,80,80,0.2) !important; background:#fff8f8 !important; }
+    .danger-text { color:#8b3030; font-style:italic; margin-bottom:12px; display:block; }
+    .btn-danger { background:linear-gradient(135deg,#c0392b,#922b21) !important; color:white !important; font-family:'Cinzel',serif !important; font-size:0.72rem !important; width:100%; }
+</style>

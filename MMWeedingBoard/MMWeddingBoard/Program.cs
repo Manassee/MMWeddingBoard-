@@ -8,11 +8,13 @@ builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 builder.Services.AddMudServices();
 
+var apiBase = builder.HostEnvironment.IsDevelopment()
+    ? "http://localhost:5008/"
+    : "http://192.168.1.158:5008/";
+
 builder.Services.AddScoped(sp => new HttpClient
 {
-    BaseAddress = new Uri("http://192.168.1.158:5008/") // Deine API-URL
-
-
+    BaseAddress = new Uri(apiBase)
 });
 
 
